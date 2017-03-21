@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.clearfix {
+    background: #00f;
+    padding: 10px;
+    border-bottom: 10px solid #00f;
+}
+
+.sidebar {
+    float: left;
+    width: 33%;
+    background: #ee0;
+}
+
+.main {
+    float: left;
+    width: 67%;
+    padding-top: 10px;
+    min-height: 100px;
+    background: #f00;
+}
+
+
+/*.sidebar,
+.main {
+    padding-bottom: 1000em;
+    margin-bottom: -1000em;
+}*/
+
+.footer {
+    background: #0f0;
+    clear: both;
+}
+
+.link {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.employee>div {
+    padding: 5px 10px;
+}
+
+img {
+    vertical-align: middle;
+}
