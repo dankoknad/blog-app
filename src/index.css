@@ -5,9 +5,9 @@ body {
 }
 
 .clearfix {
-    background: #00f;
+    background: #ffa500;
     padding: 10px;
-    border-bottom: 10px solid #00f;
+    border-bottom: 10px solid #ffa500;
 }
 
 .sidebar {
@@ -17,19 +17,9 @@ body {
 }
 
 .main {
-    float: left;
-    width: 67%;
     padding-top: 10px;
-    min-height: 100px;
     background: #f00;
 }
-
-
-/*.sidebar,
-.main {
-    padding-bottom: 1000em;
-    margin-bottom: -1000em;
-}*/
 
 .footer {
     background: #0f0;

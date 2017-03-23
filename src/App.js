@@ -3,6 +3,7 @@ import NavLinks from './NavLinks';
 import Home from './Home';
 import About from './About';
 import Admin from './Admin';
+import Links from './Links';
 import Footer from './Footer';
 import Employee from './Employee';
 import './App.css';
@@ -11,9 +12,7 @@ import _ from 'lodash';
 import {loadEmployees} from'./helpers.js';
 import {
   BrowserRouter as Router,
-	Match,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 
 class App extends Component {
@@ -27,27 +26,28 @@ class App extends Component {
       .then(employees => this.setState({employees}))    
   }
 
+	counter = (e) => {
+		e.preventDefault();
+		const num = this.state.num + 5;
+		this.setState({num});
+	}
+
   render() {
-    const {employees} = this.state; 
+    const {employees, num} = this.state; 
     return (
       <Router>  
         <div className="clearfix">
-					<NavLinks />
-          <div className="sidebar">
-            <h2><Link className="link" to="/">home >></Link></h2> 
-            <h2 style={{paddingLeft: 10}}>employees:</h2>          
-            {employees.map((employee => 
-              <div key={employee.id}>
-                <Link className="link" to={`/employee/${employee.id}`}>{employee.first_name} {employee.last_name}</Link>
-              </div>))
-            }
-          </div>
+					<NavLinks num={num}/>
           <div className="main">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/admin" component={Admin} />
+            <Route exact path="/links" render={() => (
+                <Links employees={employees} />
+              )}
+						/>
             { employees.length && <Route path="/employee/:employeeId" render={({match}) => (
-                <Employee employee={ _.find(employees, {id: match.params.employeeId})} />
+                <Employee counter={this.counter} employee={ _.find(employees, {id: match.params.employeeId})} />
               )} />
             }
           </div>
