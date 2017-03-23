@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+// components
 import NavLinks from './NavLinks';
 import Home from './Home';
 import About from './About';
@@ -6,10 +8,27 @@ import Admin from './Admin';
 import Links from './Links';
 import Footer from './Footer';
 import Employee from './Employee';
+
+//styles
 import './App.css';
+
+// helpers
 import _ from 'lodash';
-// import {loadEmployees, addEmployee, updateEmployee, removeEmployee} from'./helpers.js';
-import {loadEmployees} from'./helpers.js';
+/* import {loadEmployees, addEmployee, updateEmployee, removeEmployee} from'./helpers.js'; */
+import {loadEmployees, getTimeStamp, getDateFromTimestamp} from'./helpers.js';
+import uuidV1 from 'uuid/v1';
+
+ console.log("uuidV1: ", uuidV1());
+ console.log("TimeStamp: ", +getTimeStamp(), getTimeStamp());
+ const timestamp = getTimeStamp();
+
+// const getDateFromTimestamp = (timeStamp) => {
+// 	return (timeStamp).toUTCString();
+// }
+setTimeout(function(){ console.log("getDateFromTimestamp ", getDateFromTimestamp(timestamp)); }, 500);
+
+
+ 
 import {
   BrowserRouter as Router,
   Route

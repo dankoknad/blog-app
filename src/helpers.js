@@ -40,3 +40,13 @@ export const removeEmployee = (id) => {
     }
   })
 }
+
+// generate timestamp
+export const getTimeStamp = () => {
+	return  new Date();
+}
+
+// timestamp to update
+export const getDateFromTimestamp = (timeStamp) => {
+	return (timeStamp).toUTCString();
+}
