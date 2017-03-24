@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import Remarkable from 'remarkable';
 
 // components
 import NavLinks from './NavLinks';
@@ -9,35 +14,20 @@ import Links from './Links';
 import Footer from './Footer';
 import Employee from './Employee';
 
-//styles
+// styles
 import './App.css';
 
 // helpers
 import _ from 'lodash';
-/* import {loadEmployees, addEmployee, updateEmployee, removeEmployee} from'./helpers.js'; */
-import {loadEmployees, getTimeStamp, getDateFromTimestamp} from'./helpers.js';
-import uuidV1 from 'uuid/v1';
-
- console.log("uuidV1: ", uuidV1());
- console.log("TimeStamp: ", +getTimeStamp(), getTimeStamp());
- const timestamp = getTimeStamp();
-
-// const getDateFromTimestamp = (timeStamp) => {
-// 	return (timeStamp).toUTCString();
-// }
-setTimeout(function(){ console.log("getDateFromTimestamp ", getDateFromTimestamp(timestamp)); }, 500);
-
-
- 
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+/* import uuidV1 from 'uuid/v1'; */
+/* import {loadEmployees, addEmployee, updateEmployee, removeEmployee, getTimeStamp, getDateFromTimestamp} from'./helpers.js'; */
+import {loadEmployees} from'./helpers.js';
 
 class App extends Component {
   state = {
     employees: [],
-		num: 5
+		num: 5,
+		markdown: '**Attention!** We have some *markdown* here!\n- first list item\n- list item,\n  - jklk\n  - Inline `code`\n## h2 title'
   }
 
   componentDidMount(){
@@ -51,12 +41,18 @@ class App extends Component {
 		this.setState({num});
 	}
 
+	getRawMarkup = () => {
+    const md = new Remarkable({breaks: true});
+    return { __html: md.render(this.state.markdown) };
+  }
+
   render() {
     const {employees, num} = this.state; 
     return (
       <Router>  
         <div className="clearfix">
 					<NavLinks num={num}/>
+					<div dangerouslySetInnerHTML={this.getRawMarkup()} />
           <div className="main">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
