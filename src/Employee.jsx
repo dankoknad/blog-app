@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default function Employee ({ employee, counter }){
   return (
     <div className="employee">
-			<div><button onClick={counter}>Update counter!</button></div>
+			<div><button onClick={counter} className="button-primary">Update counter!</button></div>
 			<br/>
 			<div><Link to="/links">{'<< '} Links home</Link></div>
       <div>id: {employee.id}</div>

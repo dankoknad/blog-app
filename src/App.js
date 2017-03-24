@@ -15,6 +15,7 @@ import Footer from './Footer';
 import Employee from './Employee';
 
 // styles
+// import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 // helpers
@@ -50,10 +51,10 @@ class App extends Component {
     const {employees, num} = this.state; 
     return (
       <Router>  
-        <div className="clearfix">
+        <div className="container">
 					<NavLinks num={num}/>
 					<div dangerouslySetInnerHTML={this.getRawMarkup()} />
-          <div className="main">
+          <div className="">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/admin" component={Admin} />

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 export default function Links ({employees}){
   return (
-    <div style={{padding: 10}}>
+    <div>
       <h2>Links Page</h2>
       {employees.map((employee => 
 				<div key={employee.id}>
