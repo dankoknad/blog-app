@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default function Links ({posts}){
+export default function postsLinks ({posts}){
   return (
     <div>
       <h2>Links Page</h2>

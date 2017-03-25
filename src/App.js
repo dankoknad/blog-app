@@ -10,7 +10,7 @@ import NavLinks from './NavLinks';
 import Home from './Home';
 import About from './About';
 import Admin from './Admin';
-import Links from './Links';
+import PostsLinks from './PostsLinks';
 import Footer from './Footer';
 import Post from './Post';
 
@@ -58,7 +58,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/posts" render={() => (
-                <Links posts={posts} />
+                <PostsLinks posts={posts} />
               )}
 						/>
             { posts.length && <Route path="/posts/:postId" render={({match}) => (
