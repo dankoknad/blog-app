@@ -1,29 +1,61 @@
 {
-	"data": {
-		"author": "SpongeBob SquarePants",
-		"blogPosts": [{
-			"id": "1490286139096",
-			"title": "First blogPost",
-			"content": "asdfd afsda fdas",
-			"time": "1490284179305",
-			"liked": false,
-			"commented": true,
-			"comments": [{
-				"commentId": "1490286162690",
-				"time": "1490289179305",
-				"author": "Captain Anonymous",
-				"content": "ghjkjg kjhgjhgk jkh",
-				"liked": false
-			}]
-		}],
-		"social": {
-			"email": "jkh@gjgj.com",
-			"twitter": "https://twitter.com/SpongeBob",
-			"wiki": "http://spongebob.wikia.com/wiki/Encyclopedia_SpongeBobia",
-			"nick": "http://www.nick.com/spongebob-squarepants/",
-			"imdb": "http://www.imdb.com/title/tt0206512/",
-			"facebook": "https://www.facebook.com/spongebob",
-			"google+": "https://plus.google.com/105539612533820458795"
-		}
-	}
+    "data": {
+        "author": "SpongeBob SquarePants",
+        "blogPosts": [{
+            "id": "1490286139096",
+            "title": "First blogPost",
+            "content": "asdfd afsda fdas",
+            "time": "1490284179305",
+            "liked": false,
+            "likes": 0,
+            "commented": true,
+            "comments": [{
+                "commentId": "1490286162690",
+                "time": "1490289179305",
+                "author": "Captain Anonymous",
+                "content": "ghjkjg kjhgjhgk jkh",
+                "liked": false,
+                "likes": 0
+            }, {
+                "commentId": "1490286168690",
+                "time": "1490289172205",
+                "author": "Captain Anonymous",
+                "content": "lorem **bold?** jkh",
+                "liked": false,
+                "likes": 0
+            }]
+        }, {
+            "id": "1490286139055",
+            "title": "Second blogPost",
+            "content": "Tralala _italic_ afsda fdas",
+            "time": "1490284179305",
+            "liked": true,
+            "likes": 8,
+            "commented": true,
+            "comments": [{
+                "commentId": "1490586165690",
+                "time": "1490289179305",
+                "author": "Captain Anonymous",
+                "content": "abcde kjhgjhgk jkh",
+                "liked": true,
+                "likes": 2
+            }, {
+                "commentId": "1690286168690",
+                "time": "1490289172299",
+                "author": "Captain Anonymous",
+                "content": "lorem **b o l d ?** jkh",
+                "liked": false,
+                "likes": 0
+            }]
+        }],
+        "social": {
+            "email": "jkh@gjgj.com",
+            "twitter": "https://twitter.com/SpongeBob",
+            "wiki": "http://spongebob.wikia.com/wiki/Encyclopedia_SpongeBobia",
+            "nick": "http://www.nick.com/spongebob-squarepants/",
+            "imdb": "http://www.imdb.com/title/tt0206512/",
+            "facebook": "https://www.facebook.com/spongebob",
+            "google+": "https://plus.google.com/105539612533820458795"
+        }
+    }
 }

@@ -4,6 +4,11 @@ body {
     font-family: sans-serif;
 }
 
+.post {
+    padding: 10px;
+    background: #fff;
+}
+
 .footer {
     background: #0f0;
     clear: both;
@@ -19,24 +24,14 @@ body {
     text-decoration: underline;
 }
 
-
-/*.employee>div {
-    padding: 5px 10px;
-}*/
-
 img {
     vertical-align: middle;
 }
 
-.list-inline {
-    list-style: none;
+.main-nav {
+    padding: 10px 0;
 }
 
-.list-inline li {
-    display: inline-block;
-}
-
-.list-inline a {
-    display: inline-block;
-    padding: 5px 10px;
+a.active {
+    color: red;
 }

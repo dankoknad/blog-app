@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export default function NavLinks ({num}){
+export default function NavNavLinks ({num}){
   return (
-    <ul className="list-inline">
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/links">Links</Link></li>
-      <li><Link to="/admin">Admin</Link></li>
-      <li><Link to="/about">About</Link></li>
+    <ul className="list-inline main-nav">
+      <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
+      <li><NavLink activeClassName="active" to="/posts">Posts</NavLink></li>
+      <li><NavLink activeClassName="active" to="/admin">Admin</NavLink></li>
+      <li><NavLink activeClassName="active" to="/about">About</NavLink></li>
 			<h1>{num}</h1>
     </ul>
   )

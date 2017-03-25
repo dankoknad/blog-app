@@ -12,28 +12,28 @@ import About from './About';
 import Admin from './Admin';
 import Links from './Links';
 import Footer from './Footer';
-import Employee from './Employee';
+import Post from './Post';
 
 // styles
-// import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 // helpers
 import _ from 'lodash';
 /* import uuidV1 from 'uuid/v1'; */
 /* import {loadEmployees, addEmployee, updateEmployee, removeEmployee, getTimeStamp, getDateFromTimestamp} from'./helpers.js'; */
-import {loadEmployees} from'./helpers.js';
+import {loadBlogPosts} from'./helpers.js';
 
 class App extends Component {
   state = {
-    employees: [],
+    posts: [],
 		num: 5,
 		markdown: '**Attention!** We have some *markdown* here!\n- first list item\n- list item,\n  - jklk\n  - Inline `code`\n## h2 title'
   }
 
   componentDidMount(){
-    loadEmployees('http://localhost:4020/employees')
-      .then(employees => this.setState({employees}))    
+    loadBlogPosts('http://localhost:4020/posts')
+      .then(data => this.setState({posts: data}))    
   }
 
 	counter = (e) => {
@@ -42,30 +42,33 @@ class App extends Component {
 		this.setState({num});
 	}
 
-	getRawMarkup = () => {
-    const md = new Remarkable({breaks: true});
-    return { __html: md.render(this.state.markdown) };
-  }
+	renderMarkdown = (txt) => {
+		const md = new Remarkable({breaks: true});
+		return { __html: md.render(txt) };
+	}
 
   render() {
-    const {employees, num} = this.state; 
+    const {posts, num} = this.state; 
     return (
       <Router>  
         <div className="container">
 					<NavLinks num={num}/>
-					<div dangerouslySetInnerHTML={this.getRawMarkup()} />
-          <div className="">
+          <div className="jumbotron">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/admin" component={Admin} />
-            <Route exact path="/links" render={() => (
-                <Links employees={employees} />
+            <Route exact path="/posts" render={() => (
+                <Links posts={posts} />
               )}
 						/>
-            { employees.length && <Route path="/employee/:employeeId" render={({match}) => (
-                <Employee counter={this.counter} employee={ _.find(employees, {id: match.params.employeeId})} />
+            { posts.length && <Route path="/posts/:postId" render={({match}) => (
+                <Post
+									counter={this.counter}
+									post={ _.find(posts, {id: match.params.postId})} 
+									renderMarkdown={this.renderMarkdown}
+								/>
               )} />
-            }
+						}
           </div>
 					<Footer />
         </div>

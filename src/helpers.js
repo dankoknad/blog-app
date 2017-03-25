@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:4020/employees';
 
 // load data
-export const loadEmployees = (url) => {
+export const loadBlogPosts = (url) => {
   return fetch(url)
     .then(res => res.json())
 }
@@ -46,7 +46,5 @@ export const getTimeStamp = () => {
 	return  new Date();
 }
 
-// timestamp to update
-export const getDateFromTimestamp = (timeStamp) => {
-	return (timeStamp).toUTCString();
-}
+// timestamp to readable
+export const getDateFromTimestamp = (timeStamp) => new Date(+ timeStamp).toUTCString();

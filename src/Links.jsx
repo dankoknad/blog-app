@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default function Links ({employees}){
+export default function Links ({posts}){
   return (
     <div>
       <h2>Links Page</h2>
-      {employees.map((employee => 
-				<div key={employee.id}>
-					<Link className="link" to={`/employee/${employee.id}`}>{employee.first_name} {employee.last_name}</Link>
+      {posts.map((post => 
+				<div key={post.id}>
+					<Link className="link" to={`/posts/${post.id}`}>{post.title}</Link>
 				</div>))
 			}
     </div>
