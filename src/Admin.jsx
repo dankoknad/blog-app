@@ -1,4 +1,5 @@
 import React from 'react';
+import {Prompt} from 'react-router-dom';
 import {renderMarkdown} from './helpers';
 
 export default function Admin({title, content, updateTitle, updateContent}) {
@@ -17,6 +18,10 @@ export default function Admin({title, content, updateTitle, updateContent}) {
 			<div>preview:</div>
 			<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(title)} />
 			<p dangerouslySetInnerHTML={renderMarkdown(content)} />
+			<Prompt
+				when={title.length > 0 || content.length > 0}
+				message="Your changes are not saved!"
+			/>
 		</div>
 	)
 }
