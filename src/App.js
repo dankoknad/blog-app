@@ -56,7 +56,9 @@ class App extends Component {
           <div className="jumbotron">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/admin" component={Admin} />
+            <Route exact path="/admin" render={() => (
+							<Admin renderMarkdown={this.renderMarkdown} />
+						)} />
             <Route exact path="/posts" render={() => (
                 <PostsLinks posts={posts} />
               )}

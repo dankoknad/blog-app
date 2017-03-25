@@ -18,7 +18,7 @@
         "uuid": "^3.0.1"
     },
     "scripts": {
-        "server": "json-server test01.json -p 4020 --watch",
+        "server": "json-server db/test01.json -p 4020 --watch",
         "start": "react-scripts start",
         "dev": "concurrently --kill-others \"yarn run server\" \"yarn start\"",
         "build": "react-scripts build",
