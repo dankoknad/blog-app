@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import Remarkable from 'remarkable';
 
 // components
 import NavLinks from './NavLinks';
@@ -28,7 +27,8 @@ class App extends Component {
   state = {
     posts: [],
 		num: 5,
-		markdown: '**Attention!** We have some *markdown* here!\n- first list item\n- list item,\n  - jklk\n  - Inline `code`\n## h2 title'
+		tempTitle: "",
+		tempContent: ""
   }
 
   componentDidMount(){
@@ -42,13 +42,20 @@ class App extends Component {
 		this.setState({num});
 	}
 
-	renderMarkdown = (txt) => {
-		const md = new Remarkable({breaks: true});
-		return { __html: md.render(txt) };
+	
+
+	updateTitle = (e) => {
+		e.preventDefault();
+		this.setState({tempTitle: e.target.value});
+	}
+	
+	updateContent = (e) => {
+		e.preventDefault();
+		this.setState({tempContent: e.target.value});
 	}
 
   render() {
-    const {posts, num} = this.state; 
+    const {posts, num, tempTitle, tempContent} = this.state; 
     return (
       <Router>  
         <div className="container">
@@ -57,7 +64,12 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/admin" render={() => (
-							<Admin renderMarkdown={this.renderMarkdown} />
+							<Admin
+								title={tempTitle}
+								content={tempContent}
+								updateTitle={this.updateTitle}
+								updateContent={this.updateContent}
+							/>
 						)} />
             <Route exact path="/posts" render={() => (
                 <PostsLinks posts={posts} />
@@ -67,7 +79,6 @@ class App extends Component {
                 <Post
 									counter={this.counter}
 									post={ _.find(posts, {id: match.params.postId})} 
-									renderMarkdown={this.renderMarkdown}
 								/>
               )} />
 						}

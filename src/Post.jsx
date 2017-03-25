@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {getDateFromTimestamp} from './helpers';
-export default function Post ({ post, renderMarkdown, counter }) {
+import {getDateFromTimestamp, renderMarkdown} from './helpers';
+
+export default function Post ({ post, counter }) {
 	return (
 		<div>
 			<div><button onClick={counter} className="btn btn-default">Update counter!</button></div>

@@ -1,4 +1,6 @@
+import Remarkable from 'remarkable';
 const baseUrl = 'http://localhost:4020/employees';
+
 
 // load data
 export const loadBlogPosts = (url) => {
@@ -39,6 +41,12 @@ export const removeEmployee = (id) => {
       'Content-Type': 'application/json'
     }
   })
+}
+
+// render markdown
+export const renderMarkdown = (txt) => {
+	const md = new Remarkable({breaks: true});
+	return { __html: md.render(txt) };
 }
 
 // generate timestamp
