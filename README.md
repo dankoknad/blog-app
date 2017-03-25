@@ -1,3 +1,11 @@
+## Blogging App
+
+### Startining App (After Installing a Dependency)
+
+`yarn run dev` _or_ `npm run dev`
+
+___ 
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
