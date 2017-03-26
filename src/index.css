@@ -24,6 +24,10 @@ body {
     text-decoration: underline;
 }
 
+.link p {
+    margin-bottom: 0;
+}
+
 img {
     vertical-align: middle;
 }
@@ -42,7 +46,6 @@ hr {
 
 .list-group-item p {
     position: relative;
-    margin-bottom: 0;
 }
 
 .list-group-item:hover p:before {

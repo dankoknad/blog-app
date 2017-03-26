@@ -48,7 +48,7 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 						{posts.map((post, i, posts ) => {
 							return	(
 								<li key={post.id} className="list-group-item">
-									<a href="#" onClick={(e) => removePost(e, post.id, posts)} dangerouslySetInnerHTML={renderMarkdown(post.title)} />
+									<a className="link" href="#" onClick={(e) => removePost(e, post.id, posts)} dangerouslySetInnerHTML={renderMarkdown(post.title)} />
 								</li>
 								)
 							})

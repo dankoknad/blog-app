@@ -5,7 +5,7 @@ import {renderMarkdown} from './helpers';
 export default function postsLinks ({posts}){
   return (
     <div>
-      <h2>Links Page</h2>
+      <h2>Posts:</h2>
       {posts.map(post => {
 				const {id, title} = post;
 				return (
