@@ -35,3 +35,15 @@ img {
 a.active {
     color: red;
 }
+
+hr {
+    border-top: 1px solid red;
+}
+
+.list-group-item p {
+    margin-bottom: 0;
+}
+
+.list-group-item:hover a {
+    color: red;
+}

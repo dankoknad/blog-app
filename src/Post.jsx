@@ -2,11 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {renderMarkdown, getDateFromTimestamp} from './helpers';
 
-export default function Post ({ post, counter }) {
+export default function Post ({ post }) {
 	return (
 		<div>
-			<div><button onClick={counter} className="btn btn-default">Update counter!</button></div>
-			<br/>
 			<div><Link to="/posts">{'<< '} All posts</Link></div>
 			<div>id: {post.id}</div>
 			<div className="post">

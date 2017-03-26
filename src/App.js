@@ -20,13 +20,11 @@ import './App.css';
 // helpers
 import _ from 'lodash';
 import uuidV1 from 'uuid/v1';
-/* import {loadEmployees, addEmployee, updateEmployee, removeEmployee, getTimeStamp, getDateFromTimestamp} from'./helpers.js'; */
-import {loadBlogPosts, publishPost, getTimeStamp} from'./helpers.js';
+import {loadBlogPosts, publishPost, removePost, getTimeStamp} from'./helpers.js';
 
 class App extends Component {
   state = {
     posts: [],
-		num: 5,
 		tempTitle: "",
 		tempContent: ""
   }
@@ -35,12 +33,6 @@ class App extends Component {
     loadBlogPosts('http://localhost:4020/posts')
       .then(data => this.setState({posts: data}))    
   }
-
-	counter = (e) => {
-		e.preventDefault();
-		const num = this.state.num + 5;
-		this.setState({num});
-	}
 
 	updateTitle = (e) => {
 		e.preventDefault();
@@ -65,15 +57,34 @@ class App extends Component {
 			comments: []
 		}
 
-		// console.log(post);
-		publishPost(post, "http://localhost:4020/posts");
+		if(this.state.tempTitle && this.state.tempContent){
+			publishPost(post, "http://localhost:4020/posts");
 
-		this.setState({
-			tempTitle: "",
-			tempContent: "",
-			posts: this.state.posts.concat(post)
-		});
-				
+			this.setState({
+				tempTitle: "",
+				tempContent: "",
+				posts: this.state.posts.concat(post)
+			});	
+		}
+	}
+
+	removePost = (e, id, posts) => {
+		e.preventDefault();
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		const approve = confirm("Are you sure you want't to remove this item?");
+
+		if(approve){
+			removePost("http://localhost:4020/posts", id);
+
+			this.setState({
+				posts: [
+					...posts.slice(0, whichIndex),
+					...posts.slice(whichIndex + 1)
+				]
+			});
+		}
+
 	}
 
   render() {
@@ -89,9 +100,11 @@ class App extends Component {
 							<Admin
 								title={tempTitle}
 								content={tempContent}
+								posts={posts}
 								updateTitle={this.updateTitle}
 								updateContent={this.updateContent}
 								publishPost={this.publishPost}
+								removePost={this.removePost}								
 							/>
 						)} />
             <Route exact path="/posts" render={() => (
@@ -100,7 +113,6 @@ class App extends Component {
 						/>
             { posts.length && <Route path="/posts/:postId" render={({match}) => (
                 <Post
-									counter={this.counter}
 									post={ _.find(posts, {id: match.params.postId})} 
 								/>
               )} />

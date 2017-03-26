@@ -32,9 +32,9 @@ export const updateEmployee = (employee) => {
   }).then(res => res.json())
 }
 
-// update data removeEmployee
-export const removeEmployee = (id) => {
-  return fetch(`${baseUrl}/${id}`, {
+// update data removePost
+export const removePost = (url, id) => {
+  return fetch(`${url}/${id}`, {
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',
