@@ -19,9 +19,9 @@ import './App.css';
 
 // helpers
 import _ from 'lodash';
-/* import uuidV1 from 'uuid/v1'; */
+import uuidV1 from 'uuid/v1';
 /* import {loadEmployees, addEmployee, updateEmployee, removeEmployee, getTimeStamp, getDateFromTimestamp} from'./helpers.js'; */
-import {loadBlogPosts} from'./helpers.js';
+import {loadBlogPosts, publishPost, getTimeStamp} from'./helpers.js';
 
 class App extends Component {
   state = {
@@ -42,8 +42,6 @@ class App extends Component {
 		this.setState({num});
 	}
 
-	
-
 	updateTitle = (e) => {
 		e.preventDefault();
 		this.setState({tempTitle: e.target.value});
@@ -52,6 +50,30 @@ class App extends Component {
 	updateContent = (e) => {
 		e.preventDefault();
 		this.setState({tempContent: e.target.value});
+	}
+
+	publishPost = (e) => {
+		e.preventDefault();
+		const post = {
+			id: uuidV1(),
+			title: this.state.tempTitle,
+			content: this.state.tempContent,
+			time: + getTimeStamp(),
+			liked: false,
+			likes: 0,
+			commented: false,
+			comments: []
+		}
+
+		// console.log(post);
+		publishPost(post, "http://localhost:4020/posts");
+
+		this.setState({
+			tempTitle: "",
+			tempContent: "",
+			posts: this.state.posts.concat(post)
+		});
+				
 	}
 
   render() {
@@ -69,6 +91,7 @@ class App extends Component {
 								content={tempContent}
 								updateTitle={this.updateTitle}
 								updateContent={this.updateContent}
+								publishPost={this.publishPost}
 							/>
 						)} />
             <Route exact path="/posts" render={() => (

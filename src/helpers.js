@@ -8,15 +8,15 @@ export const loadBlogPosts = (url) => {
     .then(res => res.json())
 }
 
-// save data addEmployee
-export const addEmployee = (employee) => {
-  return fetch(baseUrl, {
+// save data addPost
+export const publishPost = (post, url) => {
+  return fetch(url, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(employee)
+    body: JSON.stringify(post)
   }).then(res => res.json())
 }
 

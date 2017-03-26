@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {getDateFromTimestamp, renderMarkdown} from './helpers';
+import {renderMarkdown, getDateFromTimestamp} from './helpers';
 
 export default function Post ({ post, counter }) {
 	return (
@@ -10,7 +10,7 @@ export default function Post ({ post, counter }) {
 			<div><Link to="/posts">{'<< '} All posts</Link></div>
 			<div>id: {post.id}</div>
 			<div className="post">
-				<h3 className="text-center">{post.title}</h3>
+				<h3 dangerouslySetInnerHTML={renderMarkdown(post.title)} className="text-center" />
 				<div dangerouslySetInnerHTML={renderMarkdown(post.content)}/>
 			</div>
 			<div>
