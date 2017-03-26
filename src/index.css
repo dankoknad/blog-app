@@ -54,6 +54,7 @@ hr {
 
 .list-group-item:hover a {
     color: red;
+    text-decoration: none;
 }
 
 .remove-enter {

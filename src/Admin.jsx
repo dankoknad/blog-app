@@ -39,7 +39,7 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 			</div>
 			<hr/>
 			<div className="well">
-				<div>Remove items:</div> <br/>
+				<div className="alert alert-danger">Remove items:</div>
 				<ul className="list-group">
 					<ReactCSSTransitionGroup
 						transitionName="remove"
