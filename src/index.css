@@ -44,6 +44,13 @@ hr {
     border-top: 1px solid red;
 }
 
+.list-group-item:hover {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    cursor: pointer;
+}
+
 .list-group-item p {
     position: relative;
 }
@@ -56,7 +63,8 @@ hr {
 }
 
 .list-group-item:hover a {
-    color: red;
+    color: inherit;
+    /*color: red;*/
     text-decoration: none;
 }
 
