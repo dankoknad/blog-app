@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Prompt} from 'react-router-dom';
 import {renderMarkdown} from './helpers';
 
@@ -40,14 +41,19 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 			<div className="well">
 				<div>Remove items:</div> <br/>
 				<ul className="list-group">
-					{posts.map((post, i, posts ) => {
-						return	(
-							<li key={post.id} className="list-group-item">
-								<a href="#" onClick={(e) => removePost(e, post.id, posts)} dangerouslySetInnerHTML={renderMarkdown(post.title)} />
-							</li>
-							)
-						})
-					} 
+					<ReactCSSTransitionGroup
+						transitionName="remove"
+						transitionEnterTimeout={250}
+						transitionLeaveTimeout={250}>
+						{posts.map((post, i, posts ) => {
+							return	(
+								<li key={post.id} className="list-group-item">
+									<a href="#" onClick={(e) => removePost(e, post.id, posts)} dangerouslySetInnerHTML={renderMarkdown(post.title)} />
+								</li>
+								)
+							})
+						} 
+						</ReactCSSTransitionGroup>
 				</ul>
 			</div>
 			<Prompt

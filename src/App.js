@@ -71,7 +71,6 @@ class App extends Component {
 	removePost = (e, id, posts) => {
 		e.preventDefault();
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
-
 		const approve = confirm("Are you sure you want't to remove this item?");
 
 		if(approve){
