@@ -24,7 +24,8 @@ import {
 	loadBlogPosts,
 	publishPost,
 	removePost,
-	getTimeStamp
+	getTimeStamp,
+	publishComment
 } from'./helpers.js';
 
 class App extends Component {
@@ -101,9 +102,35 @@ class App extends Component {
 		this.setState({tempComment: e.target.value});		
 	}
 
-	publishComment = (e) => {
+	publishComment = (e, id, post) => {
 		e.preventDefault();
-		console.log(this.state.tempComment);
+
+		const newComment = {
+			commentId: uuidV1(),
+			time: + getTimeStamp(),
+			author: "Captain Anonymous",
+			content: this.state.tempComment,
+			liked: false,
+			likes: 0
+		}
+
+		const commentedPost = {
+			...post, 
+			...{comments: [ newComment, ...post.comments] }
+		}
+
+		publishComment("http://localhost:4020/posts", id, commentedPost);
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		this.setState({
+			posts: [
+				...this.state.posts.slice(0, whichIndex),
+				commentedPost,
+				...this.state.posts.slice(whichIndex + 1)
+			],
+			tempComment: ""
+		});
+
 	}
 
   render() {

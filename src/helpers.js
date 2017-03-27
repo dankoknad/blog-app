@@ -20,6 +20,18 @@ export const publishPost = (post, url) => {
   }).then(res => res.json())
 }
 
+// save data publishComment
+export const publishComment = (url, id, post) => {
+  return fetch(`${url}/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(post)
+  }).then(res => res.json())
+}
+
 // update data updateEmployee 
 export const updateEmployee = (employee) => {
   return fetch(`${baseUrl}/${employee.id}`, {

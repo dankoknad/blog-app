@@ -27,7 +27,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 					</textarea> 
 				</div>
 				<div className="form-group text-right">
-					<button onClick={publishComment} className="btn btn-default">Publish Comment</button>
+					<button onClick={(e)=> publishComment(e, post.id, post)} className="btn btn-default">Publish Comment</button>
 				</div>
 				{ (tempComment.length)  
 					?	<div>
@@ -36,8 +36,6 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 						</div>
 					: null
 				}
-
-
 			</div>
 			{	(post.comments.length) 
 				?	<div>
