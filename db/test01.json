@@ -138,16 +138,6 @@
       "comments": []
     },
     {
-      "id": "7de036b0-124c-11e7-aeda-4f30a0474cdc",
-      "title": "Asdfgh",
-      "content": "Asdfgh",
-      "time": 1490550539675,
-      "liked": false,
-      "likes": 0,
-      "commented": false,
-      "comments": []
-    },
-    {
       "id": "83b940e0-124c-11e7-aeda-4f30a0474cdc",
       "title": "Asdfgh",
       "content": "Asdfgh",
@@ -218,16 +208,6 @@
       "comments": []
     },
     {
-      "id": "63405bc0-12cc-11e7-afe5-bf280e8d1b10",
-      "title": "02",
-      "content": "ghjjkjhgjh",
-      "time": 1490605470589,
-      "liked": false,
-      "likes": 0,
-      "commented": false,
-      "comments": []
-    },
-    {
       "id": "7fdbd070-12cc-11e7-8d56-83f23c3406f2",
       "title": "03",
       "content": "tyutuyy",
@@ -238,10 +218,20 @@
       "comments": []
     },
     {
-      "id": "da76b310-12cc-11e7-bcf8-0185ef25abc5",
-      "title": "11",
-      "content": "www",
-      "time": 1490605670594,
+      "id": "193c0c40-12d1-11e7-915d-b97e86f5c24c",
+      "title": "Fenomenalan Clanak",
+      "content": "Ovo je najbolji clanak na celom internetu",
+      "time": 1490607493892,
+      "liked": false,
+      "likes": 0,
+      "commented": false,
+      "comments": []
+    },
+    {
+      "id": "69a70db0-12d1-11e7-8b8d-8f3f47a1e067",
+      "title": "444",
+      "content": "dfsdfs",
+      "time": 1490607628811,
       "liked": false,
       "likes": 0,
       "commented": false,

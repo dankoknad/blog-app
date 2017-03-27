@@ -9,12 +9,11 @@ export default function postsLinks ({posts}){
       {posts.map(post => {
 				const {id, title} = post;
 				return (
-							<div key={id}>
-								<Link className="link" to={`/posts/${id}`} dangerouslySetInnerHTML={renderMarkdown(title)} />
-							</div>
-						)
-					}
-				)
+						<div key={id}>
+							<Link className="link" to={`/posts/${id}`} dangerouslySetInnerHTML={renderMarkdown(title)} />
+						</div>
+					)
+				})
 			}
     </div>
   )

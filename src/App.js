@@ -31,7 +31,8 @@ class App extends Component {
   state = {
     posts: [],
 		tempTitle: "",
-		tempContent: ""
+		tempContent: "",
+		tempComment: ""
   }
 
   componentDidMount(){
@@ -95,6 +96,16 @@ class App extends Component {
 
 	}
 
+	updateTempComment = (e) => {
+		e.preventDefault();
+		this.setState({tempComment: e.target.value});		
+	}
+
+	publishComment = (e) => {
+		e.preventDefault();
+		console.log(this.state.tempComment);
+	}
+
   render() {
     const {posts, num, tempTitle, tempContent} = this.state; 
     return (
@@ -121,7 +132,10 @@ class App extends Component {
 						/>
             { posts.length && <Route path="/posts/:postId" render={({match}) => (
                 <Post
-									post={ _.find(posts, {id: match.params.postId})} 
+									post={ _.find(posts, {id: match.params.postId})}
+									tempComment={this.state.tempComment}
+									updateTempComment={this.updateTempComment}
+									publishComment={this.publishComment}
 								/>
               )} />
 						}
