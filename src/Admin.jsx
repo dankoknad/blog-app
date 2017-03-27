@@ -39,12 +39,12 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 			</div>
 			<hr/>
 			<div className="well">
-				<div className="alert alert-danger">Remove items:</div>
+				<div className="alert alert-danger">Remove items: <span className="glyphicon glyphicon-remove hide"></span></div>
 				<ul className="list-group">
 					<ReactCSSTransitionGroup
 						transitionName="remove"
-						transitionEnterTimeout={250}
-						transitionLeaveTimeout={250}>
+						transitionEnterTimeout={350}
+						transitionLeaveTimeout={350}>
 						{posts.map((post, i, posts ) => {
 							return	(
 								<li key={post.id} onClick={(e) => removePost(e, post.id, posts)} className="list-group-item">

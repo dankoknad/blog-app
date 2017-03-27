@@ -20,7 +20,12 @@ import './App.css';
 // helpers
 import _ from 'lodash';
 import uuidV1 from 'uuid/v1';
-import {loadBlogPosts, publishPost, removePost, getTimeStamp} from'./helpers.js';
+import {
+	loadBlogPosts,
+	publishPost,
+	removePost,
+	getTimeStamp
+} from'./helpers.js';
 
 class App extends Component {
   state = {
@@ -103,7 +108,7 @@ class App extends Component {
 								updateTitle={this.updateTitle}
 								updateContent={this.updateContent}
 								publishPost={this.publishPost}
-								removePost={this.removePost}								
+								removePost={this.removePost}
 							/>
 						)} />
             <Route exact path="/posts" render={() => (
