@@ -28,11 +28,11 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 				</div>
 				<div className="form-group text-right">
 					<button onClick={(e)=> publishComment(e, post.id, post)} className="btn btn-default">Publish Comment</button>
-				</div>
+				</div> 
 				{ (tempComment.length)  
 					?	<div>
 							<div>Preview comment:</div>
-							<div>{tempComment}</div>
+							<div dangerouslySetInnerHTML={renderMarkdown(tempComment)} />
 						</div>
 					: null
 				}
@@ -44,8 +44,8 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 						{post.comments.map(comment => 
 							<li key={comment.commentId} className="media list-group-item">
 								<div className="media-body">
-									<h4 className="media-heading">commented on: {getDateFromTimestamp(comment.time)}</h4>
 									<p dangerouslySetInnerHTML={renderMarkdown(comment.content)} />
+									<div className="text-right text-muted">commented on: {getDateFromTimestamp(comment.time)}</div>
 								</div>
 							</li>
 						)}
