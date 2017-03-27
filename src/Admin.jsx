@@ -50,9 +50,11 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 									<li
 										key={post.id} 
 										onClick={() => removePost(post.id, posts)} 
-										dangerouslySetInnerHTML={renderMarkdown(post.title)}
 										className="list-group-item remove-group-item" 
-									/>
+									>
+									<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
+									<span className="badge">{post.comments.length}</span>
+									</li>
 								)
 							})
 						} 

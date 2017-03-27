@@ -29,8 +29,15 @@ body {
     margin-bottom: 0;
 }
 
-.bage {
+.badge {
     background: #8BC34A;
+}
+
+.remove-group-item .badge {
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    background: #ba8080;
 }
 
 img {
