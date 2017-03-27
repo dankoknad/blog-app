@@ -44,7 +44,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 						{post.comments.map(comment => 
 							<li key={comment.commentId} className="media list-group-item">
 								<div className="media-body">
-									<h4 className="media-heading">Re: {comment.commentId}</h4>
+									<h4 className="media-heading">commented on: {getDateFromTimestamp(comment.time)}</h4>
 									<p dangerouslySetInnerHTML={renderMarkdown(comment.content)} />
 								</div>
 							</li>
