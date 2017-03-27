@@ -167,6 +167,14 @@
       "commented": false,
       "comments": [
         {
+          "commentId": "c0db45e0-12f6-11e7-8f5b-b78ca2f82e84",
+          "time": 1490623666494,
+          "author": "Captain Anonymous",
+          "content": "opa!",
+          "liked": false,
+          "likes": 0
+        },
+        {
           "commentId": "2c4d8110-12ef-11e7-8bf9-1d8fcab92693",
           "time": 1490620410786,
           "author": "Captain Anonymous",
@@ -207,16 +215,6 @@
       "title": "Create new Post",
       "content": "Create new Post",
       "time": 1490550621365,
-      "liked": false,
-      "likes": 0,
-      "commented": false,
-      "comments": []
-    },
-    {
-      "id": "36d8dda0-12cc-11e7-baaa-19f5cab029c1",
-      "title": "01 hjhjggj",
-      "content": "fghjhf",
-      "time": 1490605396090,
       "liked": false,
       "likes": 0,
       "commented": false,
@@ -296,6 +294,25 @@
           "time": 1490619451787,
           "author": "Captain Anonymous",
           "content": "my name is Danko",
+          "liked": false,
+          "likes": 0
+        }
+      ]
+    },
+    {
+      "id": "9a31a5a0-12f2-11e7-8f5b-b78ca2f82e84",
+      "title": "77",
+      "content": "sss",
+      "time": 1490621883642,
+      "liked": false,
+      "likes": 0,
+      "commented": false,
+      "comments": [
+        {
+          "commentId": "a88fc730-12f2-11e7-8f5b-b78ca2f82e84",
+          "time": 1490621907747,
+          "author": "Captain Anonymous",
+          "content": "new comment",
           "liked": false,
           "likes": 0
         }
