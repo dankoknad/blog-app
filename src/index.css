@@ -44,28 +44,23 @@ hr {
     border-top: 1px solid red;
 }
 
-.list-group-item:hover {
+.remove-group-item:hover {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
     cursor: pointer;
 }
 
-.list-group-item p {
-    position: relative;
+.remove-group-item p {
+    margin-bottom: 0;
 }
 
-.list-group-item:hover p:before {
+.remove-group-item:hover p:before {
     font-family: 'Glyphicons Halflings';
+    font-size: 16px;
     content: "\e014";
     vertical-align: middle;
     margin-right: 10px;
-}
-
-.list-group-item:hover a {
-    color: inherit;
-    /*color: red;*/
-    text-decoration: none;
 }
 
 .remove-enter {

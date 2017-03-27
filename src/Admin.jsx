@@ -47,9 +47,12 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 						transitionLeaveTimeout={350}>
 						{posts.map((post, i, posts ) => {
 							return	(
-								<li key={post.id} onClick={(e) => removePost(e, post.id, posts)} className="list-group-item">
-									<a className="link" href="#" dangerouslySetInnerHTML={renderMarkdown(post.title)} />
-								</li>
+									<li
+										key={post.id} 
+										onClick={() => removePost(post.id, posts)} 
+										dangerouslySetInnerHTML={renderMarkdown(post.title)}
+										className="list-group-item remove-group-item" 
+									/>
 								)
 							})
 						} 

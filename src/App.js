@@ -36,7 +36,10 @@ class App extends Component {
 
   componentDidMount(){
     loadBlogPosts('http://localhost:4020/posts')
-      .then(data => this.setState({posts: data}))    
+      .then(data => {
+			  const ordered =	_.orderBy(data, (o) => o.time, 'desc' );
+				this.setState({posts: ordered})
+			})    
   }
 
 	updateTitle = (e) => {
@@ -68,13 +71,14 @@ class App extends Component {
 			this.setState({
 				tempTitle: "",
 				tempContent: "",
-				posts: this.state.posts.concat(post)
+				posts: [
+					...[post],
+					...this.state.posts]
 			});	
 		}
 	}
 
-	removePost = (e, id, posts) => {
-		e.preventDefault();
+	removePost = (id, posts) => {
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 		const approve = confirm("Are you sure you want't to remove this item?");
 
