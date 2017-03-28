@@ -25,7 +25,7 @@ import {
 	publishPost,
 	removePost,
 	getTimeStamp,
-	publishComment
+	updatePost
 } from'./helpers.js';
 
 class App extends Component {
@@ -119,7 +119,7 @@ class App extends Component {
 			...{comments: [ newComment, ...post.comments] }
 		}
 
-		publishComment("http://localhost:4020/posts", id, commentedPost);
+		updatePost("http://localhost:4020/posts", id, commentedPost);
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
 		this.setState({

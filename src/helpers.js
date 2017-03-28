@@ -20,8 +20,8 @@ export const publishPost = (post, url) => {
   }).then(res => res.json())
 }
 
-// save data publishComment
-export const publishComment = (url, id, post) => {
+// save data updatePost
+export const updatePost = (url, id, post) => {
   return fetch(`${url}/${id}`, {
     method: 'PUT',
     headers: {
