@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {renderMarkdown} from './helpers';
 
 class Edit extends Component {
@@ -34,23 +33,18 @@ class Edit extends Component {
 					</div>
 					<div className="col-sm-4">
 						<ul className="list-group">
-								<ReactCSSTransitionGroup
-									transitionName="edit"
-									transitionEnterTimeout={350}
-									transitionLeaveTimeout={350}>
-									{posts.map((post, i, posts ) => {
-										return	(
-												<li
-													key={post.id}
-													onClick={()=> setActivePost(post)}
-													className="list-group-item edit-group-item" 
-												>
-													<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
-												</li>
-											)
-										})
-									} 
-									</ReactCSSTransitionGroup>
+							{posts.map((post, i, posts ) => {
+								return	(
+										<li
+											key={post.id}
+											className={activePost.id === post.id ? "list-group-item edit-group-item active" : "list-group-item edit-group-item"}
+											onClick={()=> setActivePost(post)}
+										>
+											<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
+										</li>
+									)
+								})
+							} 
 							</ul>
 					</div>
 				</div>

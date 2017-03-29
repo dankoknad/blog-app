@@ -97,13 +97,18 @@ hr {
     padding: 0 0px 0 5px;
 }
 
+.edit-group-item {
+    transition: all .3s;
+}
+
 .edit-group-item:hover {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
     cursor: pointer;
 }
 
+.edit-group-item.active p:before,
 .edit-group-item:hover p:before {
     font-family: 'Glyphicons Halflings';
     font-size: 16px;
