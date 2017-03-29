@@ -3,7 +3,7 @@ import {renderMarkdown} from './helpers';
 
 class Edit extends Component {
 	render() {
-		const {posts, setActivePost, activePost} = this.props;
+		const {posts, setActivePost, activePost, cancelEditing} = this.props;
 		return (
 			<div>
 				<div>Hello Edit Page</div>
@@ -13,7 +13,7 @@ class Edit extends Component {
 							<input 
 								onChange={e => console.log('change in input')}
 								className="form-control"
-								value={activePost.title}
+								value={activePost.title ? activePost.title : ""}
 								type="text"
 								placeholder="Title goes here"
 							/>
@@ -21,13 +21,14 @@ class Edit extends Component {
 						<div className="form-group">
 							<textarea
 								onChange={e => console.log('change in textarea')}
-								value={activePost.content}
+								value={activePost.content ? activePost.content : ""}
 								className="form-control"
 								placeholder="Content goes here"
 							>
 							</textarea> 
 						</div>
 						<div className="form-group">
+							<button onClick={cancelEditing} className="btn btn-default">Cancel editing</button>{' '} 
 							<button onClick={e => console.log('button is clicked')} className="btn btn-default">Publish edited</button>
 						</div>
 					</div>

@@ -140,6 +140,10 @@ class App extends Component {
 		this.setState({activePost: obj});
 	} 
 
+	cancelEditing = (e) => {
+		this.setState({activePost: {}});
+	}
+
   render() {
     const {posts, activePost, num, tempTitle, tempContent} = this.state; 
     return (
@@ -177,6 +181,7 @@ class App extends Component {
 								posts={posts} 
 								setActivePost={this.setActivePost}
 								activePost={activePost}
+								cancelEditing={this.cancelEditing}
 							/>
 							)} />
 						}
