@@ -18,9 +18,8 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 				<br/>
 				<br/>
 				<br/>
-				<h4>Have something to say? Leave a comment</h4>
-				<div> You can use <strong>markdown</strong>:</div>
-				<div>*Hello* = {<em>Hello</em>}, `World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} . <small><a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >Show me more examples</a></small></div> <br/>
+				<h4>Have something to say? Leave a comment:</h4>
+				<div> You can use <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >markdown</a>: *Hello* = {<em>Hello</em>}, **World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} ...</div> <br/>
 				
 				<div className="form-group">
 					<textarea

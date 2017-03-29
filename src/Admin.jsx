@@ -8,8 +8,7 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 	return (
 		<div>
 			<p>This is the Admin page</p>
-			<div>Create new Post. You can use <strong>markdown</strong>:</div>  <br/>
-			<div>*Hello* = {<em>Hello</em>}, `World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} . <small><a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >Show me more examples</a></small></div> <br/>		
+			<div>Create new Post. You can use <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >markdown</a>: *Hello* = {<em>Hello</em>}, `World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} ...</div> <br/>		
 			<div className="form-group">
 				<input 
 					onChange={updateTitle}
