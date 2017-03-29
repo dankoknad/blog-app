@@ -8,7 +8,7 @@ import {
 import NavLinks from './NavLinks';
 import Home from './Home';
 import About from './About';
-import Edit from './Edit';
+import EditPost from './EditPost';
 import Admin from './Admin';
 import PostsLinks from './PostsLinks';
 import Footer from './Footer';
@@ -32,7 +32,6 @@ import {
 class App extends Component {
   state = {
     posts: [],
-		activePost: {},
 		tempTitle: "",
 		tempContent: "",
 		tempComment: ""
@@ -135,21 +134,12 @@ class App extends Component {
 
 	}
 
-	setActivePost = (obj) => {
-		// console.log(obj);
-		this.setState({activePost: obj});
-	} 
-
-	cancelEditing = (e) => {
-		this.setState({activePost: {}});
-	}
-
   render() {
-    const {posts, activePost, num, tempTitle, tempContent} = this.state; 
+    const {posts, tempTitle, tempContent} = this.state; 
     return (
       <Router>  
         <div className="container">
-					<NavLinks num={num}/>
+					<NavLinks />
           <div className="jumbotron">
             <Route exact path="/" component={Home} />
             <Route exact path="/admin" render={() => (
@@ -177,12 +167,7 @@ class App extends Component {
               )} />
 						}
             { posts.length && <Route exact path="/edit" render={({match}) => (
-							<Edit
-								posts={posts} 
-								setActivePost={this.setActivePost}
-								activePost={activePost}
-								cancelEditing={this.cancelEditing}
-							/>
+							<EditPost posts={posts} />
 							)} />
 						}
             <Route exact path="/about" component={About} />
