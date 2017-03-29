@@ -2,6 +2,7 @@ import React from 'react';
 import {renderMarkdown} from './helpers';
 
 function Edit ({posts, setActivePost, activePost, cancelEditing}) {
+	// const isFormDirty = activePost.title.length + activePost.content.length > 0;
 	return (
 		<div>
 			<div>Hello Edit Page</div>
@@ -29,7 +30,13 @@ function Edit ({posts, setActivePost, activePost, cancelEditing}) {
 						<button onClick={cancelEditing} className="btn btn-default">Cancel editing</button>{' '} 
 						<button onClick={e => console.log('button is clicked')} className="btn btn-default">Publish edited</button>
 					</div>
+					<div>preview:</div> <br/>
+					<div className="well">	
+						<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(activePost.title)} />
+						<p dangerouslySetInnerHTML={renderMarkdown(activePost.content)} />
+					</div>
 				</div>
+
 				<div className="col-sm-4">
 					<ul className="list-group">
 						{posts.map((post, i, posts ) => {
