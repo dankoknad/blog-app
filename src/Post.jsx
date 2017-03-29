@@ -9,7 +9,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 				<li><Link to="/posts">posts</Link></li>
 				<li className="active">{post.title}</li>
 			</ol>
-			<div className="alert alert-warning text-right">id: {post.id}</div>
+			<div className="alert alert-warning text-right">post ID: {post.id}</div>
 			<div className="post">
 				<h3 dangerouslySetInnerHTML={renderMarkdown(post.title)} className="text-center" />
 				<div dangerouslySetInnerHTML={renderMarkdown(post.content)}/>

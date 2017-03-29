@@ -56,15 +56,15 @@ hr {
     border-top: 1px solid red;
 }
 
+.list-group-item p {
+    margin-bottom: 0;
+}
+
 .remove-group-item:hover {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
     cursor: pointer;
-}
-
-.remove-group-item p {
-    margin-bottom: 0;
 }
 
 .remove-group-item:hover p:before {
@@ -95,4 +95,19 @@ hr {
 
 .breadcrumb>li+li:before {
     padding: 0 0px 0 5px;
+}
+
+.edit-group-item:hover {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    cursor: pointer;
+}
+
+.edit-group-item:hover p:before {
+    font-family: 'Glyphicons Halflings';
+    font-size: 16px;
+    content: "\270f";
+    vertical-align: middle;
+    margin-right: 10px;
 }

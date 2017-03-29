@@ -8,6 +8,7 @@ import {
 import NavLinks from './NavLinks';
 import Home from './Home';
 import About from './About';
+import Edit from './Edit';
 import Admin from './Admin';
 import PostsLinks from './PostsLinks';
 import Footer from './Footer';
@@ -141,7 +142,6 @@ class App extends Component {
 					<NavLinks num={num}/>
           <div className="jumbotron">
             <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
             <Route exact path="/admin" render={() => (
 							<Admin
 								title={tempTitle}
@@ -166,6 +166,11 @@ class App extends Component {
 								/>
               )} />
 						}
+            { posts.length && <Route exact path="/edit" render={({match}) => (
+							<Edit posts={posts} />
+							)} />
+						}
+            <Route exact path="/about" component={About} />
           </div>
 					<Footer />
         </div>
