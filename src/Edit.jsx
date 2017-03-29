@@ -1,34 +1,62 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {renderMarkdown} from './helpers';
 
-export default function Edit ({posts}){
-  return (
-    <div>
-			<div>Hello Edit Page</div>
-			<div className="row">
-				<div className="col-sm-8">form</div>
-				<div className="col-sm-4">
-					<ul className="list-group">
-							<ReactCSSTransitionGroup
-								transitionName="edit"
-								transitionEnterTimeout={350}
-								transitionLeaveTimeout={350}>
-								{posts.map((post, i, posts ) => {
-									return	(
-											<li
-												key={post.id} 
-												className="list-group-item edit-group-item" 
-											>
-												<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
-											</li>
-										)
-									})
-								} 
-								</ReactCSSTransitionGroup>
-						</ul>
+class Edit extends Component {
+	render() {
+		const {posts, setActivePost, activePost} = this.props;
+		return (
+			<div>
+				<div>Hello Edit Page</div>
+				<div className="row">
+					<div className="col-sm-8">
+						<div className="form-group">
+							<input 
+								onChange={e => console.log('change in input')}
+								className="form-control"
+								value={activePost.title}
+								type="text"
+								placeholder="Title goes here"
+							/>
+						</div>
+						<div className="form-group">
+							<textarea
+								onChange={e => console.log('change in textarea')}
+								value={activePost.content}
+								className="form-control"
+								placeholder="Content goes here"
+							>
+							</textarea> 
+						</div>
+						<div className="form-group">
+							<button onClick={e => console.log('button is clicked')} className="btn btn-default">Publish edited</button>
+						</div>
+					</div>
+					<div className="col-sm-4">
+						<ul className="list-group">
+								<ReactCSSTransitionGroup
+									transitionName="edit"
+									transitionEnterTimeout={350}
+									transitionLeaveTimeout={350}>
+									{posts.map((post, i, posts ) => {
+										return	(
+												<li
+													key={post.id}
+													onClick={()=> setActivePost(post)}
+													className="list-group-item edit-group-item" 
+												>
+													<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
+												</li>
+											)
+										})
+									} 
+									</ReactCSSTransitionGroup>
+							</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-  )
+		);
+	}
 }
+
+export default Edit;

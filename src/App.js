@@ -32,6 +32,7 @@ import {
 class App extends Component {
   state = {
     posts: [],
+		activePost: {},
 		tempTitle: "",
 		tempContent: "",
 		tempComment: ""
@@ -134,8 +135,13 @@ class App extends Component {
 
 	}
 
+	setActivePost = (obj) => {
+		// console.log(obj);
+		this.setState({activePost: obj});
+	} 
+
   render() {
-    const {posts, num, tempTitle, tempContent} = this.state; 
+    const {posts, activePost, num, tempTitle, tempContent} = this.state; 
     return (
       <Router>  
         <div className="container">
@@ -167,7 +173,11 @@ class App extends Component {
               )} />
 						}
             { posts.length && <Route exact path="/edit" render={({match}) => (
-							<Edit posts={posts} />
+							<Edit
+								posts={posts} 
+								setActivePost={this.setActivePost}
+								activePost={activePost}
+							/>
 							)} />
 						}
             <Route exact path="/about" component={About} />
