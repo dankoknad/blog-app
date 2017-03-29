@@ -98,7 +98,7 @@ hr {
 }
 
 .edit-group-item {
-    /*padding-left: 0;*/
+    overflow: hidden;
     transition: all .3s;
 }
 

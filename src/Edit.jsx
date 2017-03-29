@@ -37,7 +37,7 @@ function Edit ({posts, setActivePost, activePost, cancelEditing}) {
 									<li
 										key={post.id}
 										className={activePost.id === post.id ? "list-group-item edit-group-item active" : "list-group-item edit-group-item"}
-										onClick={()=> setActivePost(post)}
+										onClick={(e) => setActivePost(post)}
 									>
 										<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
 									</li>
