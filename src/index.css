@@ -98,12 +98,12 @@ hr {
 }
 
 .edit-group-item {
-    padding-left: 0;
+    /*padding-left: 0;*/
     transition: all .3s;
 }
 
 .edit-group-item:hover {
-    padding-left: 20px;
+    padding-left: 35px;
     color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;
@@ -111,16 +111,17 @@ hr {
 }
 
 .edit-group-item.active {
-    padding-left: 20px;
+    padding-left: 35px;
 }
 
 .edit-group-item p:before {
+    position: absolute;
+    top: 15px;
+    margin-left: -25px;
     font-family: 'Glyphicons Halflings';
     color: inherit;
     font-size: 16px;
     content: "\270f";
-    vertical-align: middle;
-    margin-right: 10px;
     opacity: 0;
     transition: opacity .3s;
 }
