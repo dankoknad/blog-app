@@ -131,7 +131,21 @@ class App extends Component {
 			],
 			tempComment: ""
 		});
+	}
 
+	publishPostEdit = (e, id, editedPost) => {
+		e.preventDefault();
+
+		id && updatePost("http://localhost:4020/posts", id, editedPost);
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		id && this.setState({
+			posts: [
+				...this.state.posts.slice(0, whichIndex),
+				editedPost,
+				...this.state.posts.slice(whichIndex + 1)
+			]
+		});
 	}
 
   render() {
@@ -167,7 +181,10 @@ class App extends Component {
               )} />
 						}
             { posts.length && <Route exact path="/edit" render={({match}) => (
-							<EditPost posts={posts} />
+							<EditPost
+								publishPostEdit={this.publishPostEdit}
+								posts={posts}
+							/>
 							)} />
 						}
             <Route exact path="/about" component={About} />

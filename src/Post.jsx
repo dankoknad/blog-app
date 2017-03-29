@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {renderMarkdown, getDateFromTimestamp} from './helpers';
+import removeMd from 'remove-markdown';
 
 export default function Post ({ post, tempComment, updateTempComment, publishComment }) {
 	return (
 		<div>
 			<ol className="breadcrumb">
 				<li><Link to="/posts">posts</Link></li>
-				<li className="active">{post.title}</li>
+				<li className="active">{removeMd(post.title)}</li>
 			</ol>
 			<div className="alert alert-warning text-right">post ID: {post.id}</div>
 			<div className="post">
