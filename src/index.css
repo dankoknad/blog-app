@@ -98,21 +98,34 @@ hr {
 }
 
 .edit-group-item {
+    padding-left: 0;
     transition: all .3s;
 }
 
 .edit-group-item:hover {
+    padding-left: 20px;
     color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;
     cursor: pointer;
 }
 
-.edit-group-item.active p:before,
-.edit-group-item:hover p:before {
+.edit-group-item.active {
+    padding-left: 20px;
+}
+
+.edit-group-item p:before {
     font-family: 'Glyphicons Halflings';
+    color: inherit;
     font-size: 16px;
     content: "\270f";
     vertical-align: middle;
     margin-right: 10px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.edit-group-item.active p:before,
+.edit-group-item:hover p:before {
+    opacity: 1;
 }
