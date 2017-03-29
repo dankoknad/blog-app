@@ -103,7 +103,7 @@ hr {
 }
 
 .edit-group-item:hover {
-    padding-left: 35px;
+    padding-left: 30px;
     color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;
@@ -111,22 +111,22 @@ hr {
 }
 
 .edit-group-item.active {
-    padding-left: 35px;
+    padding-left: 30px;
 }
 
-.edit-group-item p:before {
+.edit-group-item span:before {
     position: absolute;
-    top: 15px;
-    margin-left: -25px;
+    top: 12px;
+    margin-left: -20px;
     font-family: 'Glyphicons Halflings';
     color: inherit;
-    font-size: 16px;
+    font-size: 12px;
     content: "\270f";
     opacity: 0;
     transition: opacity .3s;
 }
 
-.edit-group-item.active p:before,
-.edit-group-item:hover p:before {
+.edit-group-item.active span:before,
+.edit-group-item:hover span:before {
     opacity: 1;
 }

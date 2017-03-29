@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import {renderMarkdown} from './helpers';
-
+import removeMd from 'remove-markdown';
 
 class EditPost extends Component {
 	state = {
@@ -66,6 +66,7 @@ class EditPost extends Component {
 										value={activePost.content ? activePost.content : ""}
 										className="form-control"
 										placeholder="Content goes here"
+										rows="6"
 									>
 									</textarea> 
 								</div>
@@ -91,7 +92,7 @@ class EditPost extends Component {
 											className={activePost.id === post.id ? "list-group-item edit-group-item active" : "list-group-item edit-group-item"}
 											onClick={(e) => this.setActivePost(post)}
 										>
-											<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
+											<span>{removeMd(post.title)}</span>
 										</li>
 									)
 								})
