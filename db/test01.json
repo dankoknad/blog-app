@@ -343,6 +343,25 @@
           "likes": 0
         }
       ]
+    },
+    {
+      "id": "90fa08d0-143f-11e7-8d5d-2fa29e8d920d",
+      "title": "Jedan normalan naslov",
+      "content": "I ne bas tako normalan sadrzaj",
+      "time": 1490764890589,
+      "liked": false,
+      "likes": 0,
+      "commented": false,
+      "comments": [
+        {
+          "commentId": "173262d0-1440-11e7-aced-b510f764decf",
+          "time": 1490765115774,
+          "author": "Captain Anonymous",
+          "content": "Ovo je tebi normalno?",
+          "liked": false,
+          "likes": 0
+        }
+      ]
     }
   ]
 }
