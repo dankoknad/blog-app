@@ -92,3 +92,7 @@ hr {
     transform: scale(0);
     transition: transform 350ms ease-in;
 }
+
+.breadcrumb>li+li:before {
+    padding: 0 0px 0 5px;
+}

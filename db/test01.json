@@ -65,7 +65,16 @@
       "liked": false,
       "likes": 0,
       "commented": false,
-      "comments": []
+      "comments": [
+        {
+          "commentId": "c44faed0-1438-11e7-972b-ff87f18479d5",
+          "time": 1490761970237,
+          "author": "Captain Anonymous",
+          "content": "abc",
+          "liked": false,
+          "likes": 0
+        }
+      ]
     },
     {
       "id": "32f7dee0-1248-11e7-85c7-d1a21050635c",

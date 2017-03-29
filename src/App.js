@@ -116,7 +116,7 @@ class App extends Component {
 
 		const commentedPost = {
 			...post, 
-			...{comments: [ newComment, ...post.comments] }
+			...{comments: [ newComment, ...post.comments]}
 		}
 
 		updatePost("http://localhost:4020/posts", id, commentedPost);
