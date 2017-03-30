@@ -83,7 +83,7 @@ class App extends Component {
 
 	removePost = (id, posts) => {
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
-		const isApproved = confirm("Are you sure you want't to remove this item?");
+		const isApproved = confirm("Are you sure you want't to remove this post?");
 
 		if(isApproved){
 			removePost("http://localhost:4020/posts", id);
