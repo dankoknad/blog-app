@@ -65,7 +65,7 @@ class EditPost extends Component {
 		return (
 			<div>
 				<div className="row">
-					<div className="col-sm-8">
+					<div className="col-md-8">
 						<p>Hello Edit Page</p>
 						<p>Select a post you would like to edit</p>
 						{(!_.isEmpty(this.state.activePost)) && <p>That's the spirit!</p>}
@@ -125,7 +125,7 @@ class EditPost extends Component {
 						}
 					</div>
 
-					<div className="col-sm-4">
+					<div className="col-md-4">
 						<ul className="list-group">
 							{posts.map((post, i, posts ) => {
 								return	(

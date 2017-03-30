@@ -10,7 +10,7 @@ export default function postsLinks ({posts}){
 					{posts.map(post => {
 						const {id, title, comments} = post;
 						return (
-							<div key={id} className="col-sm-4">
+							<div key={id} className="col-sm-6 col-md-4">
 								<Link className="list-group-item" to={`/posts/${id}`} >
 									{removeMd(title)}
 									<span className="badge">{comments.length}</span>

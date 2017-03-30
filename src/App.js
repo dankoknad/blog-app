@@ -13,6 +13,7 @@ import Admin from './Admin';
 import PostsLinks from './PostsLinks';
 import Footer from './Footer';
 import Post from './Post';
+import CreateRemovePost from './CreateRemovePost';
 
 // styles
 import 'bootstrap/dist/css/bootstrap.css';
@@ -34,7 +35,8 @@ class App extends Component {
     posts: [],
 		tempTitle: "",
 		tempContent: "",
-		tempComment: ""
+		tempComment: "",
+		isCreateRemovePostActive: 1
   }
 
   componentDidMount(){
@@ -149,8 +151,13 @@ class App extends Component {
 		});
 	}
 
+	toggleAdminTabs = (e) => {
+		// console.log(Number(e.target.getAttribute("data-tab")));
+		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
+	}
+
   render() {
-    const {posts, tempTitle, tempContent} = this.state; 
+    const {posts, tempTitle, tempContent, isCreateRemovePostActive} = this.state; 
     return (
       <Router>  
         <div className="container">
@@ -158,15 +165,22 @@ class App extends Component {
           <div className="jumbotron">
             <Route exact path="/" component={Home} />
             <Route exact path="/admin" render={() => (
-							<Admin
-								title={tempTitle}
-								content={tempContent}
-								posts={posts}
-								updateTitle={this.updateTitle}
-								updateContent={this.updateContent}
-								publishPost={this.publishPost}
-								removePost={this.removePost}
-							/>
+							<Admin toggleAdminTabs={this.toggleAdminTabs} activeTab={isCreateRemovePostActive}>
+								{(isCreateRemovePostActive)
+								?	<CreateRemovePost 
+										title={tempTitle}
+										content={tempContent}
+										posts={posts}
+										updateTitle={this.updateTitle}
+										updateContent={this.updateContent}
+										publishPost={this.publishPost}
+										removePost={this.removePost}								
+									/>
+								:	<EditPost
+										publishPostEdit={this.publishPostEdit}
+										posts={posts}
+									/>}
+							</Admin>
 						)} />
             <Route exact path="/posts" render={() => (
                 <PostsLinks posts={posts} />
@@ -180,13 +194,6 @@ class App extends Component {
 									publishComment={this.publishComment}
 								/>
               )} />
-						}
-            { posts.length && <Route exact path="/edit" render={({match}) => (
-							<EditPost
-								publishPostEdit={this.publishPostEdit}
-								posts={posts}
-							/>
-							)} />
 						}
             <Route exact path="/about" component={About} />
           </div>

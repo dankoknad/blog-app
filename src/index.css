@@ -4,6 +4,11 @@ body {
     font-family: sans-serif;
 }
 
+.nav-tabs li {
+    width: 50%;
+    text-align: center;
+}
+
 .post {
     padding: 10px;
     background: #fff;

@@ -64,7 +64,7 @@
       "time": 1490548643803,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "c44faed0-1438-11e7-972b-ff87f18479d5",
@@ -103,7 +103,7 @@
       "time": 1490550499638,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "58a40940-1331-11e7-b630-8bc6b019cbf3",
@@ -158,7 +158,7 @@
       "time": 1490550573383,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "abb72110-1301-11e7-b935-35d4ba0654d3",
@@ -255,7 +255,7 @@
       "time": 1490607628811,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "34101db0-12ed-11e7-ba2e-4d51ed366c4d",
@@ -314,7 +314,7 @@
       "time": 1490731483898,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "d6f2ec60-13f1-11e7-9dd6-31663300c6ea",
@@ -341,7 +341,7 @@
       "time": 1490764890589,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "173262d0-1440-11e7-aced-b510f764decf",
@@ -360,7 +360,7 @@
       "time": 1490794863894,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "726ad9c0-1558-11e7-b94a-396ae470456b",
@@ -395,7 +395,7 @@
       "time": 1490804134196,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "83ba7960-14bd-11e7-8cca-41b5f9209fdf",
@@ -434,7 +434,7 @@
       "time": 1490823352313,
       "liked": false,
       "likes": 0,
-      "commented": false,
+      "commented": true,
       "comments": [
         {
           "commentId": "27394d50-153b-11e7-854d-35d8a8309a6f",
