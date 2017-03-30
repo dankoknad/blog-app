@@ -41,6 +41,7 @@ class EditPost extends Component {
 	removeComment = (id, comments) => {
 		const whichIndex = _.findIndex(comments, o => o.commentId === id);
 		const isApproved = confirm("Are you sure you want't to remove this comment?");
+		const isCommented = comments.length > 1;
 
 		if(isApproved){
 			let reducedComments = [
@@ -51,6 +52,7 @@ class EditPost extends Component {
 			this.setState({
 				activePost: {
 					...this.state.activePost,
+					commented: isCommented,
 					comments: reducedComments
 				}
 			});
@@ -106,7 +108,7 @@ class EditPost extends Component {
 																onClick={() => this.removeComment(comment.commentId, comments)} 
 																className="list-group-item remove-group-item" 
 															>
-																<span>{removeMd(comment.content)}</span>
+																<div>{removeMd(comment.content)}</div>
 															</li>
 														)
 													})

@@ -117,6 +117,7 @@ class App extends Component {
 
 		const commentedPost = {
 			...post, 
+			...{commented: true},
 			...{comments: [ newComment, ...post.comments]}
 		}
 
