@@ -30,14 +30,14 @@ body {
 }
 
 .badge {
-    background: #8BC34A;
+    background: #337ab7;
 }
 
-.remove-group-item .badge {
+.list-group-item>.badge {
     position: absolute;
+    top: 12px;
     right: 10px;
-    top: 17px;
-    background: #ba8080;
+    float: none;
 }
 
 img {
@@ -60,19 +60,41 @@ hr {
     margin-bottom: 0;
 }
 
+.remove-group-item {
+    overflow: hidden;
+    transition: all .3s;
+}
+
 .remove-group-item:hover {
+    padding-left: 30px;
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
     cursor: pointer;
 }
 
-.remove-group-item:hover p:before {
+.remove-group-item div:before {
+    position: absolute;
+    top: 10px;
+    margin-left: -20px;
     font-family: 'Glyphicons Halflings';
     font-size: 16px;
     content: "\e014";
     vertical-align: middle;
     margin-right: 10px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.remove-group-item .badge {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    background: #ba8080;
+}
+
+.remove-group-item:hover div:before {
+    opacity: 1;
 }
 
 .remove-enter {
@@ -114,7 +136,7 @@ hr {
     padding-left: 30px;
 }
 
-.edit-group-item span:before {
+.edit-group-item div:before {
     position: absolute;
     top: 12px;
     margin-left: -20px;
@@ -126,7 +148,7 @@ hr {
     transition: opacity .3s;
 }
 
-.edit-group-item.active span:before,
-.edit-group-item:hover span:before {
+.edit-group-item.active div:before,
+.edit-group-item:hover div:before {
     opacity: 1;
 }

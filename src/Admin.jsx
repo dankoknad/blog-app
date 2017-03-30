@@ -2,6 +2,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Prompt} from 'react-router-dom';
 import {renderMarkdown} from './helpers';
+import removeMd from 'remove-markdown';
 
 export default function Admin({posts, title, content, updateTitle, updateContent, publishPost, removePost}) {
 	const isFormDirty = title.length + content.length > 0;
@@ -52,7 +53,7 @@ export default function Admin({posts, title, content, updateTitle, updateContent
 										onClick={() => removePost(post.id, posts)} 
 										className="list-group-item remove-group-item" 
 									>
-									<span dangerouslySetInnerHTML={renderMarkdown(post.title)}/>
+									<div>{removeMd(post.title)}</div>
 									<span className="badge">{post.comments.length}</span>
 									</li>
 								)

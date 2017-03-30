@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { Component } from 'react';
 import _ from 'lodash';
 import {renderMarkdown} from './helpers';
@@ -90,7 +89,6 @@ class EditPost extends Component {
 									</textarea> 
 								</div>
 
-
 								<div>preview:</div> <br/>
 								<div className="well">	
 									<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(activePost.title)} />
@@ -102,7 +100,7 @@ class EditPost extends Component {
 											<div className="alert alert-danger">Danger zone - remove comments</div>
 											<ul className="list-group">
 												{activePost.comments.map((comment, i, comments ) => {
-													return	(
+													return (
 															<li
 																key={comment.commentId} 
 																onClick={() => this.removeComment(comment.commentId, comments)} 
@@ -113,10 +111,10 @@ class EditPost extends Component {
 														)
 													})
 												}
-												</ul>
-											</div>
-										: null
-									}
+											</ul>
+										</div>
+									: null
+								}
 								<div className="form-group">
 									<button onClick={this.cancelEditing} className="btn btn-default">I'm done</button>{' '} 
 									<button onClick={e => {publishPostEdit(e, activePost.id, activePost)}} className="btn btn-default">Publish edited</button>
@@ -134,7 +132,8 @@ class EditPost extends Component {
 											className={activePost.id === post.id ? "list-group-item edit-group-item active" : "list-group-item edit-group-item"}
 											onClick={(e) => this.setActivePost(post)}
 										>
-											<span>{removeMd(post.title)}</span>
+											<div>{removeMd(post.title)}</div>
+											<span className="badge">{post.comments.length}</span>
 										</li>
 									)
 								})
