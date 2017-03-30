@@ -39,8 +39,23 @@ class EditPost extends Component {
 		})
 	}
 
-	removeComment = (params) => {
-		console.log("clicked");
+	removeComment = (id, comments) => {
+		const whichIndex = _.findIndex(comments, o => o.commentId === id);
+		const isApproved = confirm("Are you sure you want't to remove this comment?");
+
+		if(isApproved){
+			let reducedComments = [
+				...comments.slice(0, whichIndex),
+				...comments.slice(whichIndex + 1)
+			]
+
+			this.setState({
+				activePost: {
+					...this.state.activePost,
+					comments: reducedComments
+				}
+			});
+		}
 	}
 
 	render() {
@@ -75,6 +90,13 @@ class EditPost extends Component {
 									</textarea> 
 								</div>
 
+
+								<div>preview:</div> <br/>
+								<div className="well">	
+									<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(activePost.title)} />
+									<p dangerouslySetInnerHTML={renderMarkdown(activePost.content)} />
+								</div>
+
 								{(activePost.comments.length)  
 									? <div>
 											<div className="alert alert-danger">Danger zone - remove comments</div>
@@ -95,15 +117,9 @@ class EditPost extends Component {
 											</div>
 										: null
 									}
-
 								<div className="form-group">
 									<button onClick={this.cancelEditing} className="btn btn-default">I'm done</button>{' '} 
 									<button onClick={e => {publishPostEdit(e, activePost.id, activePost)}} className="btn btn-default">Publish edited</button>
-								</div>
-								<div>preview:</div> <br/>
-								<div className="well">	
-									<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(activePost.title)} />
-									<p dangerouslySetInnerHTML={renderMarkdown(activePost.content)} />
 								</div>
 							</div>
 						}
