@@ -39,6 +39,10 @@ class EditPost extends Component {
 		})
 	}
 
+	removeComment = (params) => {
+		console.log("clicked");
+	}
+
 	render() {
 		const {posts, publishPostEdit} = this.props;
 		const {activePost}= this.state;
@@ -70,6 +74,28 @@ class EditPost extends Component {
 									>
 									</textarea> 
 								</div>
+
+								{(activePost.comments.length)  
+									? <div>
+											<div className="alert alert-danger">Danger zone - remove comments</div>
+											<ul className="list-group">
+												{activePost.comments.map((comment, i, comments ) => {
+													return	(
+															<li
+																key={comment.commentId} 
+																onClick={() => this.removeComment(comment.commentId, comments)} 
+																className="list-group-item remove-group-item" 
+															>
+																<span>{removeMd(comment.content)}</span>
+															</li>
+														)
+													})
+												}
+												</ul>
+											</div>
+										: null
+									}
+
 								<div className="form-group">
 									<button onClick={this.cancelEditing} className="btn btn-default">I'm done</button>{' '} 
 									<button onClick={e => {publishPostEdit(e, activePost.id, activePost)}} className="btn btn-default">Publish edited</button>
