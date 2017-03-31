@@ -123,17 +123,19 @@ class App extends Component {
 			...{comments: [ newComment, ...post.comments]}
 		}
 
-		updatePost("http://localhost:4020/posts", id, commentedPost);
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
-		this.setState({
-			posts: [
-				...this.state.posts.slice(0, whichIndex),
-				commentedPost,
-				...this.state.posts.slice(whichIndex + 1)
-			],
-			tempComment: ""
-		});
+		if (this.state.tempComment.length){
+			updatePost("http://localhost:4020/posts", id, commentedPost);
+			this.setState({
+				posts: [
+					...this.state.posts.slice(0, whichIndex),
+					commentedPost,
+					...this.state.posts.slice(whichIndex + 1)
+				],
+				tempComment: ""
+			});
+		}
 	}
 
 	publishPostEdit = (e, id, editedPost) => {
@@ -152,7 +154,6 @@ class App extends Component {
 	}
 
 	toggleAdminTabs = (e) => {
-		// console.log(Number(e.target.getAttribute("data-tab")));
 		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
 	}
 

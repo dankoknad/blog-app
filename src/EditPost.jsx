@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import _ from 'lodash';
 import {renderMarkdown} from './helpers';
 import removeMd from 'remove-markdown';
@@ -101,18 +102,23 @@ class EditPost extends Component {
 									? <div>
 											<div className="alert alert-danger">Danger zone - remove comments</div>
 											<ul className="list-group">
-												{activePost.comments.map((comment, i, comments ) => {
-													return (
-															<li
-																key={comment.commentId} 
-																onClick={() => this.removeComment(comment.commentId, comments)} 
-																className="list-group-item remove-group-item" 
-															>
-																<div>{removeMd(comment.content)}</div>
-															</li>
-														)
-													})
-												}
+												<ReactCSSTransitionGroup
+													transitionName="remove"
+													transitionEnterTimeout={350}
+													transitionLeaveTimeout={350}>
+													{activePost.comments.map((comment, i, comments ) => {
+														return (
+																<li
+																	key={comment.commentId} 
+																	onClick={() => this.removeComment(comment.commentId, comments)} 
+																	className="list-group-item remove-group-item" 
+																>
+																	<div>{removeMd(comment.content)}</div>
+																</li>
+															)
+														})
+													}
+												</ReactCSSTransitionGroup>
 											</ul>
 										</div>
 									: null
