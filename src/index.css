@@ -163,3 +163,29 @@ hr {
 .edit-group-item:hover div:before {
     opacity: 1;
 }
+.like {
+	margin-left: 5px;
+	position: relative;
+	vertical-align: middle;
+	color: #777;
+}
+
+.like:hover {
+	color: red;
+}
+.like:after {
+	font-family: 'Glyphicons Halflings';
+	content: "\e005";
+}
+.like.active {
+	color: red;
+}
+.like,
+.like:focus,
+.like:hover,
+.like.active,
+.like.active:hover {
+	text-decoration: none;
+}
+
+

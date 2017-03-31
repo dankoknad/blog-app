@@ -233,8 +233,8 @@
       "title": "Blah new Post",
       "content": "Blah, Blah, Blah new Post",
       "time": 1490550621365,
-      "liked": true,
-      "likes": 20,
+      "liked": false,
+      "likes": 19,
       "commented": false,
       "comments": []
     },
@@ -487,8 +487,8 @@
       "title": "00002",
       "content": "00002",
       "time": 1490880451367,
-      "liked": true,
-      "likes": 5,
+      "liked": false,
+      "likes": 4,
       "commented": true,
       "comments": [
         {

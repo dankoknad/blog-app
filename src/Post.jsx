@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {renderMarkdown, getDateFromTimestamp} from './helpers';
 import removeMd from 'remove-markdown';
 
-export default function Post ({ post, tempComment, updateTempComment, publishComment }) {
+export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike }) {
 	return (
 		<div>
 			<ol className="breadcrumb">
@@ -14,7 +14,9 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 			<div className="post">
 				<h3 dangerouslySetInnerHTML={renderMarkdown(post.title)} className="text-center" />
 				<div dangerouslySetInnerHTML={renderMarkdown(post.content)}/>
-				<div>likes: {post.likes}</div>
+				<div>likes: {post.likes} 
+					<a onClick={(e) => handlePostLike(e, post.id, post)} className={post.liked ? "like text-muted active" : "like"} href="#"></a>
+				</div>
 				<div>time: {getDateFromTimestamp(post.time)}</div>
 				<br/>
 				<br/>

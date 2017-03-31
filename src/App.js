@@ -140,9 +140,9 @@ class App extends Component {
 
 	publishPostEdit = (e, id, editedPost) => {
 		e.preventDefault();
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
 		id && updatePost("http://localhost:4020/posts", id, editedPost);
-		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
 		id && this.setState({
 			posts: [
@@ -155,6 +155,26 @@ class App extends Component {
 
 	toggleAdminTabs = (e) => {
 		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
+	}
+
+	handlePostLike = (e, id, post) => {
+
+		const likedPost = {
+			...post, 
+			...{liked: !post.liked},
+			...{likes: post.liked ? post.likes - 1 : post.likes + 1}
+		}
+
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		updatePost("http://localhost:4020/posts", id, likedPost);
+		this.setState({
+			posts: [
+				...this.state.posts.slice(0, whichIndex),
+				likedPost,
+				...this.state.posts.slice(whichIndex + 1)
+			]
+		});		
 	}
 
   render() {
@@ -193,6 +213,7 @@ class App extends Component {
 									tempComment={this.state.tempComment}
 									updateTempComment={this.updateTempComment}
 									publishComment={this.publishComment}
+									handlePostLike={this.handlePostLike} 
 								/>
               )} />
 						}
