@@ -3,12 +3,26 @@ body {
     padding: 0;
     font-family: sans-serif;
 }
-
+.nav-tabs {
+    border-top: 1px solid #ddd;
+}
 .nav-tabs li {
     width: 50%;
     text-align: center;
 }
-
+.nav-tabs > li {
+     margin-bottom: 0; 
+}
+.nav-tabs > li > a {
+    border-radius: 0;
+}
+.nav-tabs > li > a:hover {
+    border-color: #eee #eee #337ab7;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+		 padding-top: 11px;
+	border: 0;
+}
 .post {
     padding: 10px;
     background: #fff;
