@@ -93,8 +93,17 @@
       "time": 1490550494905,
       "liked": true,
       "likes": 81,
-      "commented": false,
-      "comments": []
+      "commented": true,
+      "comments": [
+        {
+          "commentId": "1cb8ff10-16e4-11e7-a116-874122302cbb",
+          "time": 1491055464833,
+          "author": "Captain Anonymous",
+          "content": "Buahaha...",
+          "liked": false,
+          "likes": 0
+        }
+      ]
     },
     {
       "id": "66030d60-124c-11e7-aeda-4f30a0474cdc",
@@ -118,8 +127,8 @@
           "time": 1490648732269,
           "author": "Captain Anonymous",
           "content": "*Another comment*",
-          "liked": true,
-          "likes": 75
+          "liked": false,
+          "likes": 74
         },
         {
           "commentId": "08a2c620-1331-11e7-ba24-5bf777203b60",
@@ -136,8 +145,8 @@
       "title": "Asdfgh",
       "content": "Asdfgh",
       "time": 1490550553134,
-      "liked": false,
-      "likes": 0,
+      "liked": true,
+      "likes": 1,
       "commented": false,
       "comments": []
     },
@@ -348,8 +357,8 @@
           "time": 1490765115774,
           "author": "Captain Anonymous",
           "content": "Ovo je tebi normalno?",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 1
         }
       ]
     },
@@ -422,10 +431,51 @@
       "title": "Not a number = TL",
       "content": "hjhghj \n```\nhello\n  world\n    from React!\n```",
       "time": 1490823344752,
-      "liked": false,
-      "likes": 3,
-      "commented": false,
-      "comments": []
+      "liked": true,
+      "likes": 4,
+      "commented": true,
+      "comments": [
+        {
+          "commentId": "348d6810-16df-11e7-9181-6f161613def3",
+          "time": 1491053357329,
+          "author": "Captain Anonymous",
+          "content": "5",
+          "liked": false,
+          "likes": 0
+        },
+        {
+          "commentId": "32a34b50-16df-11e7-9181-6f161613def3",
+          "time": 1491053354117,
+          "author": "Captain Anonymous",
+          "content": "4",
+          "liked": false,
+          "likes": 0
+        },
+        {
+          "commentId": "3008a340-16df-11e7-9181-6f161613def3",
+          "time": 1491053349748,
+          "author": "Captain Anonymous",
+          "content": "3",
+          "liked": true,
+          "likes": 1
+        },
+        {
+          "commentId": "2da3d840-16df-11e7-9181-6f161613def3",
+          "time": 1491053345732,
+          "author": "Captain Anonymous",
+          "content": "2",
+          "liked": true,
+          "likes": 1
+        },
+        {
+          "commentId": "2bad5f70-16df-11e7-9181-6f161613def3",
+          "time": 1491053342440,
+          "author": "Captain Anonymous",
+          "content": "1",
+          "liked": false,
+          "likes": 0
+        }
+      ]
     },
     {
       "id": "aee10780-14c7-11e7-b6e6-3b4409784ebe",
@@ -461,16 +511,6 @@
           "likes": 0
         }
       ]
-    },
-    {
-      "id": "00cbd110-154a-11e7-844f-2f3ea288128c",
-      "title": "55rr  ggh",
-      "content": "kkl ioi",
-      "time": 1490879324321,
-      "liked": true,
-      "likes": 2,
-      "commented": false,
-      "comments": []
     },
     {
       "id": "9083e430-154c-11e7-b21a-77a974064b1c",

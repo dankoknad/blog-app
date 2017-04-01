@@ -30,12 +30,17 @@ export default function CreateRemovePost({posts, title, content, updateTitle, up
 			<div className="form-group">
 				<button onClick={publishPost} className="btn btn-default">Publish</button>
 			</div>
+				
+			{isFormDirty && 
+				<div>
+					<div>preview:</div> <br/>
+					<div className="well">	
+						<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(title)} />
+						<p dangerouslySetInnerHTML={renderMarkdown(content)} />
+					</div>
+				</div>
+			}
 
-			<div>preview:</div> <br/>
-			<div className={isFormDirty ? "well" : null}>	
-				<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(title)} />
-				<p dangerouslySetInnerHTML={renderMarkdown(content)} />
-			</div>
 			<hr/>
 			<div className="well">
 				<h3 className="text-danger">Danger zone!</h3>

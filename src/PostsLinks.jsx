@@ -13,7 +13,10 @@ export default function postsLinks ({posts}){
 							<div key={id} className="col-sm-6 col-md-4">
 								<Link className="list-group-item" to={`/posts/${id}`} >
 									{removeMd(title)}
-									{likes && <span className="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>}
+									{(likes) 
+										? <span className="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 
+										: null
+									}
 									<span className="badge">{comments.length}</span>
 								</Link>
 							</div>
