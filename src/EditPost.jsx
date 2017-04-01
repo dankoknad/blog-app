@@ -124,8 +124,8 @@ class EditPost extends Component {
 									: null
 								}
 								<div className="form-group">
-									<button onClick={this.cancelEditing} className="btn btn-default">I'm done</button>{' '} 
-									<button onClick={e => {publishPostEdit(e, activePost.id, activePost)}} className="btn btn-default">Publish edited</button>
+									<button onClick={this.cancelEditing} className="btn btn-default">Cancel</button>{' '} 
+									<button onClick={e => {publishPostEdit(e, activePost.id, activePost)}} className="btn btn-success">Save</button>
 								</div>
 							</div>
 						}
