@@ -14,10 +14,10 @@ body {
 	margin-bottom: 0; 
 }
 .nav-tabs > li > a {
-border-radius: 0;
+	border-radius: 0;
 }
 .nav-tabs > li > a:hover {
-border-color: #eee #eee #337ab7;
+	border-color: #eee #eee #337ab7;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
 	padding-top: 11px;
@@ -48,12 +48,15 @@ border-color: #eee #eee #337ab7;
 	margin-bottom: 0;
 }
 
-.list-group-item .glyphicon-thumbs-up {
+.list-group-item .glyphicon-heart {
 	position: absolute;
 	top: 15px;
 	right: 40px;
+	font-size: 12px;
 }
-
+.glyphicon-heart.active {
+	color: #c9302c;
+}
 .list-group-item>.badge {
 	position: absolute;
 	top: 12px;
@@ -178,8 +181,8 @@ hr {
 	opacity: 1;
 }
 .like {
-	margin-left: 5px;
-	position: relative;
+	margin-left: 3px;
+	font-size: 12px;
 	vertical-align: middle;
 }
 .like:focus,
@@ -187,14 +190,14 @@ hr {
 	color: #999;
 }
 .like:hover {
-	color: red;
+	color: #c9302c;
 }
 .like:after {
 	font-family: 'Glyphicons Halflings';
 	content: "\e005";
 }
 .like.active {
-	color: red;
+	color: #c9302c;
 }
 .like,
 .like:focus,
