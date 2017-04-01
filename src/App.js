@@ -13,6 +13,7 @@ import Admin from './Admin';
 import PostsLinks from './PostsLinks';
 import Footer from './Footer';
 import Post from './Post';
+import Comments from './Comments';
 import CreateRemovePost from './CreateRemovePost';
 
 // styles
@@ -177,6 +178,28 @@ class App extends Component {
 		});		
 	}
 
+		handleCommentLike = (e, commentId, postId) => {
+			e.preventDefault();
+			console.log(commentId, postId);
+
+		// const likedPost = {
+		// 	...post, 
+		// 	...{liked: !post.liked},
+		// 	...{likes: post.liked ? post.likes - 1 : post.likes + 1}
+		// }
+
+		// const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		// updatePost("http://localhost:4020/posts", id, likedPost);
+		// this.setState({
+		// 	posts: [
+		// 		...this.state.posts.slice(0, whichIndex),
+		// 		likedPost,
+		// 		...this.state.posts.slice(whichIndex + 1)
+		// 	]
+		// });		
+	}
+
   render() {
     const {posts, tempTitle, tempContent, isCreateRemovePostActive} = this.state; 
     return (
@@ -214,7 +237,10 @@ class App extends Component {
 									updateTempComment={this.updateTempComment}
 									publishComment={this.publishComment}
 									handlePostLike={this.handlePostLike} 
-								/>
+									handleCommentLike={this.handleCommentLike}
+								>
+									<Comments />
+								</Post>
               )} />
 						}
             <Route exact path="/about" component={About} />

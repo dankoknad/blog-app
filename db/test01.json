@@ -233,8 +233,8 @@
       "title": "Blah new Post",
       "content": "Blah, Blah, Blah new Post",
       "time": 1490550621365,
-      "liked": false,
-      "likes": 19,
+      "liked": true,
+      "likes": 20,
       "commented": false,
       "comments": []
     },
@@ -422,8 +422,8 @@
       "title": "Not a number = TL",
       "content": "hjhghj \n```\nhello\n  world\n    from React!\n```",
       "time": 1490823344752,
-      "liked": true,
-      "likes": 4,
+      "liked": false,
+      "likes": 3,
       "commented": false,
       "comments": []
     },
@@ -492,68 +492,44 @@
       "commented": true,
       "comments": [
         {
-          "commentId": "83863290-1634-11e7-b349-938660cd4288",
-          "time": 1490980045881,
+          "commentId": "2d287c40-1667-11e7-914a-25c2044c666c",
+          "time": 1491001805316,
           "author": "Captain Anonymous",
-          "content": "dd",
+          "content": "7878 jkjhkjh",
+          "liked": false,
+          "likes": 5
+        },
+        {
+          "commentId": "28316da0-1667-11e7-914a-25c2044c666c",
+          "time": 1491001796986,
+          "author": "Captain Anonymous",
+          "content": "jhkjh\n",
+          "liked": false,
+          "likes": 7
+        },
+        {
+          "commentId": "1e108090-1667-11e7-8f66-299d75ad89d9",
+          "time": 1491001779994,
+          "author": "Captain Anonymous",
+          "content": "jklj",
+          "liked": false,
+          "likes": 2
+        },
+        {
+          "commentId": "e669d420-1666-11e7-a3d3-83c6a968b9c2",
+          "time": 1491001686626,
+          "author": "Captain Anonymous",
+          "content": "bbbbb",
           "liked": false,
           "likes": 0
         },
         {
-          "commentId": "825a0ea0-1634-11e7-b349-938660cd4288",
-          "time": 1490980043914,
+          "commentId": "e4284890-1666-11e7-a3d3-83c6a968b9c2",
+          "time": 1491001682841,
           "author": "Captain Anonymous",
-          "content": "cc",
+          "content": "aaaa",
           "liked": false,
-          "likes": 0
-        },
-        {
-          "commentId": "80f3c7e0-1634-11e7-b349-938660cd4288",
-          "time": 1490980041566,
-          "author": "Captain Anonymous",
-          "content": "bb",
-          "liked": false,
-          "likes": 0
-        },
-        {
-          "commentId": "72802280-1634-11e7-8f5a-45ef73611b9e",
-          "time": 1490980017320,
-          "author": "Captain Anonymous",
-          "content": "qq",
-          "liked": false,
-          "likes": 0
-        },
-        {
-          "commentId": "6bcb3740-1634-11e7-9735-83306b0c3bc3",
-          "time": 1490980006068,
-          "author": "Captain Anonymous",
-          "content": "asdasd",
-          "liked": false,
-          "likes": 0
-        },
-        {
-          "commentId": "bee9b560-1633-11e7-8845-6ba67562d57b",
-          "time": 1490979716022,
-          "author": "Captain Anonymous",
-          "content": "yuioiuyoiyu hjkj",
-          "liked": false,
-          "likes": 0
-        },
-        {
-          "commentId": "b5142930-1633-11e7-8845-6ba67562d57b",
-          "time": 1490979699523,
-          "author": "Captain Anonymous",
-          "content": "yuiyuyyi",
-          "liked": false,
-          "likes": 0
-        },
-        {
-          "commentId": "b3277460-1633-11e7-8845-6ba67562d57b",
-          "time": 1490979696294,
-          "author": "Captain Anonymous",
-          "content": "yuoiyi",
-          "liked": false,
-          "likes": 0
+          "likes": 12
         }
       ]
     }

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {renderMarkdown, getDateFromTimestamp} from './helpers';
 import removeMd from 'remove-markdown';
 
-export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike }) {
+export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike, handleCommentLike,children }) {
 	return (
 		<div>
 			<ol className="breadcrumb">
@@ -15,7 +15,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 				<h3 dangerouslySetInnerHTML={renderMarkdown(post.title)} className="text-center" />
 				<div dangerouslySetInnerHTML={renderMarkdown(post.content)}/>
 				<div>likes: {post.likes} 
-					<a onClick={(e) => handlePostLike(e, post.id, post)} className={post.liked ? "like text-muted active" : "like"} href="#"></a>
+					<a onClick={(e) => handlePostLike(e, post.id, post)} className={post.liked ? "like active" : "like"} href="#"></a>
 				</div>
 				<div>time: {getDateFromTimestamp(post.time)}</div>
 				<br/>
@@ -44,6 +44,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 					: null
 				}
 			</div>
+			{/*{children}*/}
 			{	(post.comments.length) 
 				?	<div>
 						<p><strong>comments: </strong></p>
@@ -52,7 +53,11 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 							<li key={comment.commentId} className="media list-group-item">
 								<div className="media-body">
 									<p dangerouslySetInnerHTML={renderMarkdown(comment.content)} />
-									<div className="text-right text-muted">commented on: {getDateFromTimestamp(comment.time)}</div>
+									<div className="text-right text-muted">
+										<span className="pull-left">Likes: {comment.likes} 
+											<a onClick={(e) => handleCommentLike(e, comment.commentId, post.id)  } className={post.liked ? "like active" : "like"} href="#"></a>
+										</span> commented on: {getDateFromTimestamp(comment.time)}
+									</div>
 								</div>
 							</li>
 						)}

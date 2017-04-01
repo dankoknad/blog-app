@@ -167,9 +167,11 @@ hr {
 	margin-left: 5px;
 	position: relative;
 	vertical-align: middle;
-	color: #777;
 }
-
+.like:focus,
+.like {
+	color: #999;
+}
 .like:hover {
 	color: red;
 }
