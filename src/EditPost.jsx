@@ -100,7 +100,7 @@ class EditPost extends Component {
 
 								{(activePost.comments.length)  
 									? <div>
-											<div className="alert alert-danger">Danger zone - remove comments</div>
+											<div className="alert alert-danger">Danger zone! Remove comments</div>
 											<ul className="list-group">
 												<ReactCSSTransitionGroup
 													transitionName="remove"

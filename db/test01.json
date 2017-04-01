@@ -29,8 +29,8 @@
     },
     {
       "id": "3989d040-1231-11e7-9469-4f9ab775317f1",
-      "title": "bbbb",
-      "content": "bbb",
+      "title": "abcd",
+      "content": "dcba",
       "time": 1490538828612,
       "liked": false,
       "likes": 0,
@@ -39,8 +39,8 @@
     },
     {
       "id": "3989d040-1231-11e7-9469-4f9b77531yr7f1",
-      "title": "bbbb",
-      "content": "bbb",
+      "title": "bab",
+      "content": "bcb",
       "time": 1490538828612,
       "liked": true,
       "likes": 15,
@@ -357,8 +357,8 @@
           "time": 1490765115774,
           "author": "Captain Anonymous",
           "content": "Ovo je tebi normalno?",
-          "liked": true,
-          "likes": 1
+          "liked": false,
+          "likes": 0
         }
       ]
     },
@@ -575,8 +575,8 @@
     },
     {
       "id": "ab69bee0-16e7-11e7-b3ec-9fca831c586a",
-      "title": "ttyuy",
-      "content": "yyui\n\n***\n0990-09\n***\nkjhjkj\n***",
+      "title": "Tyuy",
+      "content": "Yyui\n\n- iopip + klfghg\n***\n- yuiuyiuiy + dfgfdgfdgf",
       "time": 1491056992718,
       "liked": false,
       "likes": 0,

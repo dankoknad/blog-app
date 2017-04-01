@@ -155,6 +155,7 @@ class App extends Component {
 	}
 
 	toggleAdminTabs = (e) => {
+		e.preventDefault();
 		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
 	}
 
@@ -176,7 +177,7 @@ class App extends Component {
 				...this.state.posts.slice(whichIndex + 1)
 			]
 		});		
-		
+
 		updatePost("http://localhost:4020/posts", id, likedPost);
 	}
 

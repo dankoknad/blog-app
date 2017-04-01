@@ -41,10 +41,8 @@ export default function CreateRemovePost({posts, title, content, updateTitle, up
 				</div>
 			}
 
-			<hr/>
 			<div className="well">
-				<h3 className="text-danger">Danger zone!</h3>
-				<div className="alert alert-danger">Remove posts: <span className="glyphicon glyphicon-remove hide"></span></div>
+				<div className="alert alert-danger">Danger zone! Remove comments<span className="glyphicon glyphicon-remove hide"></span></div>
 				<ul className="list-group">
 					<ReactCSSTransitionGroup
 						transitionName="remove"

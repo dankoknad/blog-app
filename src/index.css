@@ -1,181 +1,181 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 .nav-tabs {
-    border-top: 1px solid #ddd;
+	border-top: 1px solid #ddd;
 }
 .nav-tabs li {
-    width: 50%;
-    text-align: center;
+	width: 50%;
+	text-align: center;
 }
 .nav-tabs > li {
-     margin-bottom: 0; 
+	margin-bottom: 0; 
 }
 .nav-tabs > li > a {
-    border-radius: 0;
+border-radius: 0;
 }
 .nav-tabs > li > a:hover {
-    border-color: #eee #eee #337ab7;
+border-color: #eee #eee #337ab7;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-		 padding-top: 11px;
+	padding-top: 11px;
 	border: 0;
 }
 .post {
-    padding: 10px;
-    background: #fff;
+	padding: 10px;
+	background: #fff;
 }
 
-.footer {
-    background: #0f0;
-    clear: both;
+	.footer {
+	background: #0f0;
+	clear: both;
 }
 
 .link {
-    display: inline-block;
-    padding: 5px 10px;
-    text-decoration: none;
-    vertical-align: middle;
+	display: inline-block;
+	padding: 5px 10px;
+	text-decoration: none;
+	vertical-align: middle;
 }
 
 .link:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .link p {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .list-group-item .glyphicon-thumbs-up {
-    position: absolute;
-    top: 15px;
-    right: 40px;
+	position: absolute;
+	top: 15px;
+	right: 40px;
 }
 
 .list-group-item>.badge {
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    float: none;
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	float: none;
 }
 
 .badge {
-    background: #337ab7;
+	background: #337ab7;
 }
 
 img {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 .main-nav {
-    padding: 10px 0;
+padding: 10px 0;
 }
 
 a.active {
-    color: red;
+color: red;
 }
 
 hr {
-    border-top: 1px solid #337ab7;
+	border-top: 1px solid #337ab7;
 }
 
 .list-group-item p {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .remove-group-item {
-    overflow: hidden;
-    transition: all .3s;
+	overflow: hidden;
+	transition: all .3s;
 }
 
 .remove-group-item:hover {
-    padding-left: 30px;
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    cursor: pointer;
+	padding-left: 30px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	cursor: pointer;
 }
 
 .remove-group-item div:before {
-    position: absolute;
-    top: 10px;
-    margin-left: -20px;
-    font-family: 'Glyphicons Halflings';
-    font-size: 16px;
-    content: "\e014";
-    vertical-align: middle;
-    margin-right: 10px;
-    opacity: 0;
-    transition: opacity .3s;
+	position: absolute;
+	top: 10px;
+	margin-left: -20px;
+	font-family: 'Glyphicons Halflings';
+	font-size: 16px;
+	content: "\e014";
+	vertical-align: middle;
+	margin-right: 10px;
+	opacity: 0;
+	transition: opacity .3s;
 }
 
 .remove-group-item .badge {
-    position: absolute;
-    right: 10px;
-    top: 12px;
-    background: #ba8080;
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	background: #ba8080;
 }
 
 .remove-group-item:hover div:before {
-    opacity: 1;
+	opacity: 1;
 }
 
 .remove-enter {
-    transform: scale(0);
+	transform: scale(0);
 }
 
 .remove-enter.remove-enter-active {
-    transform: scale(1);
-    transition: transform 350ms ease-in;
+	transform: scale(1);
+	transition: transform 350ms ease-in;
 }
 
 .remove-leave {
-    transform: scale(1);
+	transform: scale(1);
 }
 
 .remove-leave.remove-leave-active {
-    transform: scale(0);
-    transition: transform 350ms ease-in;
+	transform: scale(0);
+	transition: transform 350ms ease-in;
 }
 
 .breadcrumb>li+li:before {
-    padding: 0 0px 0 5px;
+	padding: 0 0px 0 5px;
 }
 
 .edit-group-item {
-    overflow: hidden;
-    transition: all .3s;
+	overflow: hidden;
+	transition: all .3s;
 }
 
 .edit-group-item:hover {
-    padding-left: 30px;
-    color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1;
-    cursor: pointer;
+	padding-left: 30px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	cursor: pointer;
 }
 
 .edit-group-item.active {
-    padding-left: 30px;
+	padding-left: 30px;
 }
 
 .edit-group-item div:before {
-    position: absolute;
-    top: 12px;
-    margin-left: -20px;
-    font-family: 'Glyphicons Halflings';
-    color: inherit;
-    font-size: 12px;
-    content: "\270f";
-    opacity: 0;
-    transition: opacity .3s;
+	position: absolute;
+	top: 12px;
+	margin-left: -20px;
+	font-family: 'Glyphicons Halflings';
+	color: inherit;
+	font-size: 12px;
+	content: "\270f";
+	opacity: 0;
+	transition: opacity .3s;
 }
 
 .edit-group-item.active div:before,
 .edit-group-item:hover div:before {
-    opacity: 1;
+	opacity: 1;
 }
 .like {
 	margin-left: 5px;
@@ -203,5 +203,3 @@ hr {
 .like.active:hover {
 	text-decoration: none;
 }
-
-
