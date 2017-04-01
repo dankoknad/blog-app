@@ -159,7 +159,8 @@ class App extends Component {
 	}
 
 	handlePostLike = (e, id, post) => {
-
+		e.preventDefault();
+		
 		const likedPost = {
 			...post, 
 			...{liked: !post.liked},

@@ -15,15 +15,15 @@
           "author": "Captain Anonymous",
           "content": "``` js\nvar foo = function (bar) {\n  return bar++;\n};\n \nconsole.log(foo(5));\n```",
           "liked": false,
-          "likes": 0
+          "likes": 17
         },
         {
           "commentId": "1490286168690",
           "time": "1490289972205",
           "author": "Captain Anonymous",
           "content": "lorem **bold?** jkh",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 11
         }
       ]
     },
@@ -110,8 +110,8 @@
           "time": 1490648831956,
           "author": "Captain Anonymous",
           "content": "# The worst post I have ever read!!",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 17
         },
         {
           "commentId": "1d3901d0-1331-11e7-b630-8bc6b019cbf3",
@@ -119,7 +119,7 @@
           "author": "Captain Anonymous",
           "content": "*Another comment*",
           "liked": false,
-          "likes": 0
+          "likes": 74
         },
         {
           "commentId": "08a2c620-1331-11e7-ba24-5bf777203b60",
@@ -173,8 +173,8 @@
           "time": 1490628064991,
           "author": "Captain Anonymous",
           "content": "```\n  vidmesad!\n```",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 10
         },
         {
           "commentId": "e8746780-1300-11e7-9324-e333837aacdb",
@@ -182,7 +182,7 @@
           "author": "Captain Anonymous",
           "content": "one more",
           "liked": false,
-          "likes": 0
+          "likes": 82
         },
         {
           "commentId": "c0db45e0-12f6-11e7-8f5b-b78ca2f82e84",
@@ -190,7 +190,7 @@
           "author": "Captain Anonymous",
           "content": "opa!",
           "liked": false,
-          "likes": 0
+          "likes": 1
         },
         {
           "commentId": "2c4d8110-12ef-11e7-8bf9-1d8fcab92693",
@@ -205,8 +205,8 @@
           "time": 1490620164381,
           "author": "Captain Anonymous",
           "content": "777777",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 1
         },
         {
           "commentId": "955c4ca0-12ee-11e7-8eb6-19e8bf4d3490",
@@ -262,8 +262,8 @@
           "time": 1490619564811,
           "author": "Captain Anonymous",
           "content": "what is your name?",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 7
         },
         {
           "commentId": "22684f60-12ed-11e7-ba2e-4d51ed366c4d",
@@ -271,7 +271,7 @@
           "author": "Captain Anonymous",
           "content": "hi",
           "liked": false,
-          "likes": 0
+          "likes": 8
         },
         {
           "commentId": "9008cd80-12eb-11e7-b486-398cfa145e8d",
@@ -287,7 +287,7 @@
           "author": "Captain Anonymous",
           "content": "22222",
           "liked": false,
-          "likes": 0
+          "likes": 89
         },
         {
           "commentId": "e84a8870-12ec-11e7-ac18-7902dfe1f4ad",
@@ -330,7 +330,7 @@
           "author": "Captain Anonymous",
           "content": "hjkjhj",
           "liked": false,
-          "likes": 0
+          "likes": 2
         }
       ]
     },
@@ -393,8 +393,8 @@
       "title": "**zdravo** *Ljudi*",
       "content": "- hjkjk\n- iouiuou\n- `Hello`\n- *abc*\n- **def**",
       "time": 1490804134196,
-      "liked": true,
-      "likes": 28,
+      "liked": false,
+      "likes": 27,
       "commented": true,
       "comments": [
         {
