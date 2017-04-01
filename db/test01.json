@@ -110,24 +110,24 @@
           "time": 1490648831956,
           "author": "Captain Anonymous",
           "content": "# The worst post I have ever read!!",
-          "liked": true,
-          "likes": 17
+          "liked": false,
+          "likes": 16
         },
         {
           "commentId": "1d3901d0-1331-11e7-b630-8bc6b019cbf3",
           "time": 1490648732269,
           "author": "Captain Anonymous",
           "content": "*Another comment*",
-          "liked": false,
-          "likes": 74
+          "liked": true,
+          "likes": 75
         },
         {
           "commentId": "08a2c620-1331-11e7-ba24-5bf777203b60",
           "time": 1490648697730,
           "author": "Captain Anonymous",
           "content": "Comment",
-          "liked": false,
-          "likes": 0
+          "liked": true,
+          "likes": 1
         }
       ]
     },

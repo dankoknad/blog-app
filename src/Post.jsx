@@ -55,7 +55,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 									<p dangerouslySetInnerHTML={renderMarkdown(comment.content)} />
 									<div className="text-right text-muted">
 										<span className="pull-left">Likes: {comment.likes} 
-											<a onClick={(e) => handleCommentLike(e, comment.commentId, post.id)  } className={comment.liked ? "like active" : "like"} href="#"></a>
+											<a onClick={(e) => handleCommentLike(e, comment, comment.commentId, post, post.id)  } className={comment.liked ? "like active" : "like"} href="#"></a>
 										</span> commented on: {getDateFromTimestamp(comment.time)}
 									</div>
 								</div>

@@ -169,7 +169,6 @@ class App extends Component {
 
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
-		updatePost("http://localhost:4020/posts", id, likedPost);
 		this.setState({
 			posts: [
 				...this.state.posts.slice(0, whichIndex),
@@ -177,28 +176,42 @@ class App extends Component {
 				...this.state.posts.slice(whichIndex + 1)
 			]
 		});		
+		
+		updatePost("http://localhost:4020/posts", id, likedPost);
 	}
 
-		handleCommentLike = (e, commentId, postId) => {
-			e.preventDefault();
-			console.log(commentId, postId);
+	handleCommentLike = (e, comment, commentId, post, postId) => {												 
+		e.preventDefault();
 
-		// const likedPost = {
-		// 	...post, 
-		// 	...{liked: !post.liked},
-		// 	...{likes: post.liked ? post.likes - 1 : post.likes + 1}
-		// }
+		const whichPostIndex = _.findIndex(this.state.posts, o => o.id === postId);
+		const whichCommentIndex = _.findIndex(post.comments, o => o.commentId === commentId);
 
-		// const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+		const updatedComment = {
+			...comment,
+			liked: !comment.liked,
+			likes: (comment.liked) ? comment.likes - 1 : comment.likes + 1
+		}
 
-		// updatePost("http://localhost:4020/posts", id, likedPost);
-		// this.setState({
-		// 	posts: [
-		// 		...this.state.posts.slice(0, whichIndex),
-		// 		likedPost,
-		// 		...this.state.posts.slice(whichIndex + 1)
-		// 	]
-		// });		
+		const updatedCommnets = [	
+			...post.comments.slice(0, whichCommentIndex),
+			updatedComment,
+			...post.comments.slice(whichCommentIndex + 1)	
+		]
+
+		const updatedPost = {
+			...post,
+			comments: updatedCommnets
+		}
+
+		this.setState({
+			posts: [
+				...this.state.posts.slice(0, whichPostIndex),
+				updatedPost,
+				...this.state.posts.slice(whichPostIndex + 1)
+			]
+		});
+
+		updatePost("http://localhost:4020/posts", postId, updatedPost);
 	}
 
   render() {
