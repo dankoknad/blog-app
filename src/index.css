@@ -128,20 +128,20 @@ hr {
 }
 
 .remove-enter {
-	transform: scale(0);
+	transform: scaleY(0);
 }
 
 .remove-enter.remove-enter-active {
-	transform: scale(1);
+	transform: scaleY(1);
 	transition: transform 350ms ease-in;
 }
 
 .remove-leave {
-	transform: scale(1);
+	transform: scaleY(1);
 }
 
 .remove-leave.remove-leave-active {
-	transform: scale(0);
+	transform: scaleY(0);
 	transition: transform 350ms ease-in;
 }
 

@@ -31,12 +31,14 @@ import {
 	updatePost
 } from'./helpers.js';
 
+// Main Application Component
 class App extends Component {
   state = {
     posts: [],
 		tempTitle: "",
 		tempContent: "",
 		tempComment: "",
+		activePost: {},
 		isCreateRemovePostActive: 1
   }
 
@@ -98,7 +100,6 @@ class App extends Component {
 				]
 			});
 		}
-
 	}
 
 	updateTempComment = (e) => {
@@ -152,6 +153,57 @@ class App extends Component {
 				...this.state.posts.slice(whichIndex + 1)
 			]
 		});
+	}
+
+	setActivePost = (obj) => {
+		this.setState({activePost: obj});
+	} 
+
+	cancelEditing = (e) => {
+		this.setState({activePost: {}});
+	}
+
+	editTitle = (e) => {
+		const editedTitle = e.target.value;
+		
+		this.setState({
+			activePost: {
+				...this.state.activePost,
+				title: editedTitle
+			}
+		})
+	}
+
+	editContent = (e) => {
+		const editedContent = e.target.value;
+
+		this.setState({
+			activePost: {
+				...this.state.activePost,
+				content: editedContent
+			}
+		})
+	}
+
+	removeComment = (id, comments) => {
+		const whichIndex = _.findIndex(comments, o => o.commentId === id);
+		const isApproved = confirm("Are you sure you want't to remove this comment? After clicking on Save button, this comment will be removed permanently");
+		const isCommented = comments.length > 1;
+
+		if(isApproved){
+			let reducedComments = [
+				...comments.slice(0, whichIndex),
+				...comments.slice(whichIndex + 1)
+			]
+
+			this.setState({
+				activePost: {
+					...this.state.activePost,
+					commented: isCommented,
+					comments: reducedComments
+				}
+			});
+		}
 	}
 
 	toggleAdminTabs = (e) => {
@@ -216,7 +268,7 @@ class App extends Component {
 	}
 
   render() {
-    const {posts, tempTitle, tempContent, isCreateRemovePostActive} = this.state; 
+    const {posts, tempTitle, tempContent, isCreateRemovePostActive, activePost} = this.state; 
     return (
       <Router>  
         <div className="container">
@@ -237,6 +289,12 @@ class App extends Component {
 									/>
 								:	<EditPost
 										publishPostEdit={this.publishPostEdit}
+										editTitle={this.editTitle}
+										editContent={this.editContent}
+										removeComment={this.removeComment}
+										cancelEditing={this.cancelEditing}
+										setActivePost={this.setActivePost}
+										activePost={activePost}
 										posts={posts}
 									/>}
 							</Admin>
