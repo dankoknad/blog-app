@@ -141,7 +141,7 @@ class EditPost extends Component {
 											onClick={(e) => this.setActivePost(post)}
 										>
 											<div>{removeMd(post.title)}</div>
-											<span className="badge">{post.comments.length}</span>
+											<span className="glyphicon glyphicon-comment">{post.comments.length}</span>
 										</li>
 									)
 								})

@@ -57,27 +57,33 @@ body {
 .glyphicon-heart.active {
 	color: #c9302c;
 }
-.list-group-item>.badge {
+.list-group-item>.glyphicon-comment {
 	position: absolute;
 	top: 12px;
 	right: 10px;
-	float: none;
+	z-index: 3;
+	min-width: 20px;
+	font-size: 12px;
+	color: #fff;
 }
-
-.badge {
-	background: #337ab7;
+.glyphicon-comment:before {
+	position: absolute;
+	left: -4px;
+	/*top: 7px;*/
+	z-index: -1;
+	font-size: 20px;
+	color: #337ab7;
 }
-
 img {
 	vertical-align: middle;
 }
 
 .main-nav {
-padding: 10px 0;
+	padding: 10px 0;
 }
 
 a.active {
-color: red;
+	color: red;
 }
 
 hr {
@@ -114,11 +120,8 @@ hr {
 	transition: opacity .3s;
 }
 
-.remove-group-item .badge {
-	position: absolute;
-	right: 10px;
-	top: 12px;
-	background: #ba8080;
+.remove-group-item .glyphicon-comment:before {
+	color: #ba8080;
 }
 
 .remove-group-item:hover div:before {

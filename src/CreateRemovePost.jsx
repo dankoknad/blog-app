@@ -56,7 +56,7 @@ export default function CreateRemovePost({posts, title, content, updateTitle, up
 										className="list-group-item remove-group-item" 
 									>
 									<div>{removeMd(post.title)}</div>
-									<span className="badge">{post.comments.length}</span>
+									<span className="glyphicon glyphicon-comment">{post.comments.length}</span>
 									</li>
 								)
 							})

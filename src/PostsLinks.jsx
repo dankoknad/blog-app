@@ -17,7 +17,7 @@ export default function postsLinks ({posts}){
 										? <span className={(liked) ? "glyphicon glyphicon-heart active" : "glyphicon glyphicon-heart"} aria-hidden="true"></span> 
 										: null
 									}
-									<span className="badge">{comments.length}</span>
+									<span className="glyphicon glyphicon-comment">{comments.length}</span>
 								</Link>
 							</div>
 							)
