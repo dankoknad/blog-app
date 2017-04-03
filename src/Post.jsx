@@ -45,7 +45,7 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 				}
 			</div>
 
-			{/*comments: */}
+			{/* Comments component: */}
 			{children}
 			
 		</div>

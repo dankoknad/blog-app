@@ -4,8 +4,8 @@ import {Prompt} from 'react-router-dom';
 import {renderMarkdown} from './helpers';
 import removeMd from 'remove-markdown';
 
-export default function CreateRemovePost({posts, title, content, updateTitle, updateContent, publishPost, removePost}) {
-	const isFormDirty = title.length + content.length > 0;
+export default function CreateRemovePost({posts, tempTitle, tempContent, updateTitle, updateContent, publishPost, removePost}) {
+	const isFormDirty = tempTitle.length + tempContent.length > 0;
 	return (
 		<div>
 			<div>Create new Post. You can use <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >markdown</a>: *Hello* = {<em>Hello</em>}, `World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} ...</div> <br/>		
@@ -14,7 +14,7 @@ export default function CreateRemovePost({posts, title, content, updateTitle, up
 					onChange={updateTitle}
 					className="form-control"
 					type="text"
-					value={title}
+					value={tempTitle}
 					placeholder="Title goes here"
 				/>
 			</div>
@@ -22,7 +22,7 @@ export default function CreateRemovePost({posts, title, content, updateTitle, up
 				<textarea
 					onChange={updateContent}
 					className="form-control"
-					value={content}
+					value={tempContent}
 					placeholder="Content goes here"
 				>
 				</textarea> 
@@ -35,8 +35,8 @@ export default function CreateRemovePost({posts, title, content, updateTitle, up
 				<div>
 					<div>preview:</div> <br/>
 					<div className="well">	
-						<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(title)} />
-						<p dangerouslySetInnerHTML={renderMarkdown(content)} />
+						<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(tempTitle)} />
+						<p dangerouslySetInnerHTML={renderMarkdown(tempContent)} />
 					</div>
 				</div>
 			}

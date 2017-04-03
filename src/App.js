@@ -279,8 +279,8 @@ class App extends Component {
 							<Admin toggleAdminTabs={this.toggleAdminTabs} activeTab={isCreateRemovePostActive}>
 								{(isCreateRemovePostActive)
 								?	<CreateRemovePost 
-										title={tempTitle}
-										content={tempContent}
+										tempTitle={tempTitle}
+										tempContent={tempContent}
 										posts={posts}
 										updateTitle={this.updateTitle}
 										updateContent={this.updateContent}
