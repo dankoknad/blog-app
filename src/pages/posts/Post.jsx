@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {renderMarkdown, getDateFromTimestamp} from './helpers';
+import {renderMarkdown, getDateFromTimestamp} from '../../lib/helpers';
 import removeMd from 'remove-markdown';
 
 export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike, handleCommentLike, children }) {

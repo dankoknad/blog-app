@@ -5,16 +5,16 @@ import {
 } from 'react-router-dom';
 
 // components
-import NavLinks from './NavLinks';
-import Home from './Home';
-import About from './About';
-import EditPost from './EditPost';
-import Admin from './Admin';
-import PostsLinks from './PostsLinks';
-import Footer from './Footer';
-import Post from './Post';
-import Comments from './Comments';
-import CreateRemovePost from './CreateRemovePost';
+import NavLinks from './ui/NavLinks';
+import Home from './pages/home/Home';
+import About from './pages/about/About';
+import EditPost from './pages/admin/EditPost';
+import Admin from './pages/admin/Admin';
+import PostsLinks from './pages/posts/PostsLinks';
+import Footer from './ui/Footer';
+import Post from './pages/posts/Post';
+import Comments from './pages/posts/Comments';
+import CreateRemovePost from './pages/admin/CreateRemovePost';
 
 // styles
 import 'bootstrap/dist/css/bootstrap.css';
@@ -29,7 +29,7 @@ import {
 	removePost,
 	getTimeStamp,
 	updatePost
-} from'./helpers.js';
+} from'./lib/helpers';
 
 // Main Application Component
 class App extends Component {

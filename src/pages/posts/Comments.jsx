@@ -1,5 +1,5 @@
 import React from 'react';
-import {renderMarkdown, getDateFromTimestamp} from './helpers';
+import {renderMarkdown, getDateFromTimestamp} from '../../lib/helpers';
 
 export default function Comments({post, handleCommentLike}) {
 	return (

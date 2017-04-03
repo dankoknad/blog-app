@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import _ from 'lodash';
-import {renderMarkdown} from './helpers';
+import {renderMarkdown} from '../../lib/helpers';
 import removeMd from 'remove-markdown';
 
 function EditPost({posts, publishPostEdit, activePost, editTitle, editContent, removeComment, cancelEditing, setActivePost}) {

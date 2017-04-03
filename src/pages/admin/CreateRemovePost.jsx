@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Prompt} from 'react-router-dom';
-import {renderMarkdown} from './helpers';
+import {renderMarkdown} from '../../lib/helpers';
 import removeMd from 'remove-markdown';
 
 export default function CreateRemovePost({posts, tempTitle, tempContent, updateTitle, updateContent, publishPost, removePost}) {
