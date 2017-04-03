@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {renderMarkdown, getDateFromTimestamp} from './helpers';
 import removeMd from 'remove-markdown';
 
-export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike, handleCommentLike,children }) {
+export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike, handleCommentLike, children }) {
 	return (
 		<div>
 			<ol className="breadcrumb">
@@ -44,27 +44,10 @@ export default function Post ({ post, tempComment, updateTempComment, publishCom
 					: null
 				}
 			</div>
-			{/*{children}*/}
-			{	(post.comments.length) 
-				?	<div>
-						<p><strong>comments: </strong></p>
-						<ul className="media-list well">
-						{post.comments.map(comment => 
-							<li key={comment.commentId} className="media list-group-item">
-								<div className="media-body">
-									<p dangerouslySetInnerHTML={renderMarkdown(comment.content)} />
-									<div className="text-right text-muted">
-										<span className="pull-left">Likes: {comment.likes} 
-											<a onClick={(e) => handleCommentLike(e, comment, comment.commentId, post, post.id)  } className={comment.liked ? "like active" : "like"} href="#"></a>
-										</span> commented on: {getDateFromTimestamp(comment.time)}
-									</div>
-								</div>
-							</li>
-						)}
-						</ul>
-					</div>
-				: null
-			}
+
+			{/*comments: */}
+			{children}
+			
 		</div>
 	)
 }

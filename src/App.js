@@ -268,7 +268,7 @@ class App extends Component {
 	}
 
   render() {
-    const {posts, tempTitle, tempContent, isCreateRemovePostActive, activePost} = this.state; 
+    const {posts, tempTitle, tempContent, tempComment, isCreateRemovePostActive, activePost} = this.state; 
     return (
       <Router>  
         <div className="container">
@@ -303,18 +303,25 @@ class App extends Component {
                 <PostsLinks posts={posts} />
               )}
 						/>
-            { posts.length && <Route path="/posts/:postId" render={({match}) => (
-                <Post
-									post={ _.find(posts, {id: match.params.postId})}
-									tempComment={this.state.tempComment}
-									updateTempComment={this.updateTempComment}
-									publishComment={this.publishComment}
-									handlePostLike={this.handlePostLike} 
-									handleCommentLike={this.handleCommentLike}
-								>
-									<Comments />
-								</Post>
-              )} />
+            {	(posts.length) 
+							? <Route path="/posts/:postId" render={({match}) => {
+									const post = _.find(posts, {id: match.params.postId});
+									return (
+										<Post
+											post={post}
+											tempComment={tempComment}
+											updateTempComment={this.updateTempComment}
+											publishComment={this.publishComment}
+											handlePostLike={this.handlePostLike} 
+										>
+											<Comments 
+												post={post}
+												handleCommentLike={this.handleCommentLike}
+											/>
+										</Post>
+									)
+								}} />
+							: null
 						}
             <Route exact path="/about" component={About} />
           </div>
