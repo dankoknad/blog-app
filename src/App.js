@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
@@ -18,7 +19,7 @@ import CreateRemovePost from './pages/admin/CreateRemovePost';
 
 // styles
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './css/index.css';
 
 // helpers
 import _ from 'lodash';
@@ -50,17 +51,18 @@ class App extends Component {
 			})    
   }
 
-	updateTitle = (e) => {
+	// create post methods
+	updateTitle = (e: Event, { target }: SyntheticInputEvent) => {
 		e.preventDefault();
-		this.setState({tempTitle: e.target.value});
+		this.setState({tempTitle: target.value});
 	}
 	
-	updateContent = (e) => {
+	updateContent = (e: Event, { target }: SyntheticInputEvent) => {
 		e.preventDefault();
-		this.setState({tempContent: e.target.value});
+		this.setState({tempContent: target.value});
 	}
 
-	publishPost = (e) => {
+	publishPost = (e: Event) => {
 		e.preventDefault();
 		const post = {
 			id: uuidV1(),
@@ -86,7 +88,8 @@ class App extends Component {
 		}
 	}
 
-	removePost = (id, posts) => {
+	// remove post method
+	removePost = (id: string , posts: Array<mixed>) => {
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 		const isApproved = confirm("Are you sure you want't to remove this post?");
 
@@ -102,9 +105,10 @@ class App extends Component {
 		}
 	}
 
-	updateTempComment = (e) => {
+	// add comment methods 
+	updateTempComment = (e: Event, { target }: SyntheticInputEvent) => {
 		e.preventDefault();
-		this.setState({tempComment: e.target.value});		
+		this.setState({tempComment: target.value});		
 	}
 
 	publishComment = (e, id, post) => {
@@ -140,31 +144,22 @@ class App extends Component {
 		}
 	}
 
-	publishPostEdit = (e, id, editedPost) => {
+	toggleAdminTabs = (e: Event, { target }: SyntheticInputEvent) => {
 		e.preventDefault();
-		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
-
-		id && updatePost("http://localhost:4020/posts", id, editedPost);
-
-		id && this.setState({
-			posts: [
-				...this.state.posts.slice(0, whichIndex),
-				editedPost,
-				...this.state.posts.slice(whichIndex + 1)
-			]
-		});
+		this.setState({isCreateRemovePostActive: Number(target.getAttribute("data-tab"))});
 	}
 
+	// edit post methods	
 	setActivePost = (obj) => {
 		this.setState({activePost: obj});
 	} 
 
-	cancelEditing = (e) => {
+	cancelEditing = (e: Event) => {
 		this.setState({activePost: {}});
 	}
 
-	editTitle = (e) => {
-		const editedTitle = e.target.value;
+	editTitle = (e: Event, { target }: SyntheticInputEvent) => {
+		const editedTitle = target.value;
 		
 		this.setState({
 			activePost: {
@@ -174,8 +169,8 @@ class App extends Component {
 		})
 	}
 
-	editContent = (e) => {
-		const editedContent = e.target.value;
+	editContent = (e: Event, { target }: SyntheticInputEvent) => {
+		const editedContent = target.value;
 
 		this.setState({
 			activePost: {
@@ -187,7 +182,8 @@ class App extends Component {
 
 	removeComment = (id, comments) => {
 		const whichIndex = _.findIndex(comments, o => o.commentId === id);
-		const isApproved = confirm("Are you sure you want't to remove this comment? After clicking on Save button, this comment will be removed permanently");
+		const isApproved = confirm("Are you sure you want't to remove this comment?"
+			+ " After clicking on Save button, this comment will be removed permanently");
 		const isCommented = comments.length > 1;
 
 		if(isApproved){
@@ -206,11 +202,22 @@ class App extends Component {
 		}
 	}
 
-	toggleAdminTabs = (e) => {
+	publishPostEdit = (e, id, editedPost) => {
 		e.preventDefault();
-		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		id && updatePost("http://localhost:4020/posts", id, editedPost);
+
+		id && this.setState({
+			posts: [
+				...this.state.posts.slice(0, whichIndex),
+				editedPost,
+				...this.state.posts.slice(whichIndex + 1)
+			]
+		});
 	}
 
+	// like (post & comments) methods
 	handlePostLike = (e, id, post) => {
 		e.preventDefault();
 		
