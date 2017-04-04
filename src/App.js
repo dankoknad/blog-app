@@ -18,7 +18,7 @@ import CreateRemovePost from './pages/admin/CreateRemovePost';
 
 // styles
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './css/index.css';
 
 // helpers
 import _ from 'lodash';
@@ -50,6 +50,7 @@ class App extends Component {
 			})    
   }
 
+	// create post methods
 	updateTitle = (e) => {
 		e.preventDefault();
 		this.setState({tempTitle: e.target.value});
@@ -86,6 +87,7 @@ class App extends Component {
 		}
 	}
 
+	// remove post method
 	removePost = (id, posts) => {
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 		const isApproved = confirm("Are you sure you want't to remove this post?");
@@ -102,6 +104,7 @@ class App extends Component {
 		}
 	}
 
+	// add comment methods 
 	updateTempComment = (e) => {
 		e.preventDefault();
 		this.setState({tempComment: e.target.value});		
@@ -142,6 +145,7 @@ class App extends Component {
 
 	publishPostEdit = (e, id, editedPost) => {
 		e.preventDefault();
+		
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
 		id && updatePost("http://localhost:4020/posts", id, editedPost);
@@ -155,6 +159,7 @@ class App extends Component {
 		});
 	}
 
+	// edit post methods	
 	setActivePost = (obj) => {
 		this.setState({activePost: obj});
 	} 
@@ -187,7 +192,8 @@ class App extends Component {
 
 	removeComment = (id, comments) => {
 		const whichIndex = _.findIndex(comments, o => o.commentId === id);
-		const isApproved = confirm("Are you sure you want't to remove this comment? After clicking on Save button, this comment will be removed permanently");
+		const isApproved = confirm("Are you sure you want't to remove this comment?"
+			+ " After clicking on Save button, this comment will be removed permanently");
 		const isCommented = comments.length > 1;
 
 		if(isApproved){
@@ -211,6 +217,22 @@ class App extends Component {
 		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
 	}
 
+	publishPostEdit = (e, id, editedPost) => {
+		e.preventDefault();
+		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
+
+		id && updatePost("http://localhost:4020/posts", id, editedPost);
+
+		id && this.setState({
+			posts: [
+				...this.state.posts.slice(0, whichIndex),
+				editedPost,
+				...this.state.posts.slice(whichIndex + 1)
+			]
+		});
+	}
+
+	// like (post & comments) methods
 	handlePostLike = (e, id, post) => {
 		e.preventDefault();
 		
