@@ -89,7 +89,7 @@ class App extends Component {
 	}
 
 	// remove post method
-	removePost = (id: string , posts: Array<mixed>) => {
+	removePost = (id: string , posts: Array<Object>) => {
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 		const isApproved = confirm("Are you sure you want't to remove this post?");
 
@@ -111,7 +111,7 @@ class App extends Component {
 		this.setState({tempComment: target.value});		
 	}
 
-	publishComment = (e, id, post) => {
+	publishComment = (e: Event, id: string, post: Object) => {
 		e.preventDefault();
 
 		const newComment = {
@@ -150,7 +150,7 @@ class App extends Component {
 	}
 
 	// edit post methods	
-	setActivePost = (obj) => {
+	setActivePost = (obj: Object) => {
 		this.setState({activePost: obj});
 	} 
 
@@ -180,7 +180,7 @@ class App extends Component {
 		})
 	}
 
-	removeComment = (id, comments) => {
+	removeComment = (id: string, comments: Array<Object>) => {
 		const whichIndex = _.findIndex(comments, o => o.commentId === id);
 		const isApproved = confirm("Are you sure you want't to remove this comment?"
 			+ " After clicking on Save button, this comment will be removed permanently");
@@ -202,7 +202,7 @@ class App extends Component {
 		}
 	}
 
-	publishPostEdit = (e, id, editedPost) => {
+	publishPostEdit = (e: Event, id: string, editedPost: Object) => {
 		e.preventDefault();
 		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
 
@@ -218,7 +218,7 @@ class App extends Component {
 	}
 
 	// like (post & comments) methods
-	handlePostLike = (e, id, post) => {
+	handlePostLike = (e: Event, id: string, post: Object) => {
 		e.preventDefault();
 		
 		const likedPost = {
@@ -240,7 +240,7 @@ class App extends Component {
 		updatePost("http://localhost:4020/posts", id, likedPost);
 	}
 
-	handleCommentLike = (e, comment, commentId, post, postId) => {												 
+	handleCommentLike = (e: Event, comment: Object, commentId: string, post: Object, postId: string) => {												 
 		e.preventDefault();
 
 		const whichPostIndex = _.findIndex(this.state.posts, o => o.id === postId);

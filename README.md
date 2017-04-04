@@ -4,6 +4,10 @@
 
 `yarn run dev` _or_ `npm run dev`
 
+### Checking static types errors
+
+`yarn run flow` _or_ `npm run flow`
+
 ___ 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
