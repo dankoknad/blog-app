@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function NavNavLinks (){
+export default function NavNavLinks() {
   return (
     <ul className="list-inline main-nav">
       <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>

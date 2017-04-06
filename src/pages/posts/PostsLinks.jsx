@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import removeMd from 'remove-markdown';
 
-export default function postsLinks ({posts}){
+export default function postsLinks({posts}) {
   return (
     <div>
       <h2>Posts:</h2>

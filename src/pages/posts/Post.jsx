@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {renderMarkdown, getDateFromTimestamp} from '../../lib/helpers';
 import removeMd from 'remove-markdown';
 
-export default function Post ({ post, tempComment, updateTempComment, publishComment, handlePostLike, handleCommentLike, children }) {
+export default function Post({ post, tempComment, updateTempComment, publishComment, handlePostLike, handleCommentLike, children }) {
 	return (
 		<div>
 			<ol className="breadcrumb">
