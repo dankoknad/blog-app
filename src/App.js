@@ -52,17 +52,17 @@ class App extends Component {
   }
 
 	// create post methods
-	updateTitle = (e: Event, { target }: SyntheticInputEvent) => {
+	updateTitle = (e: Object) => {
 		e.preventDefault();
-		this.setState({tempTitle: target.value});
+		this.setState({tempTitle: e.target.value});
 	}
 	
-	updateContent = (e: Event, { target }: SyntheticInputEvent) => {
+	updateContent = (e: Object) => {
 		e.preventDefault();
-		this.setState({tempContent: target.value});
+		this.setState({tempContent: e.target.value});
 	}
 
-	publishPost = (e: Event) => {
+	publishPost = (e: Object) => {
 		e.preventDefault();
 		const post = {
 			id: uuidV1(),
@@ -144,9 +144,9 @@ class App extends Component {
 		}
 	}
 
-	toggleAdminTabs = (e: Event, { target }: SyntheticInputEvent) => {
+	toggleAdminTabs = (e: Object) => {
 		e.preventDefault();
-		this.setState({isCreateRemovePostActive: Number(target.getAttribute("data-tab"))});
+		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
 	}
 
 	// edit post methods	
@@ -154,12 +154,12 @@ class App extends Component {
 		this.setState({activePost: obj});
 	} 
 
-	cancelEditing = (e: Event) => {
+	cancelEditing = (e: Object) => {
 		this.setState({activePost: {}});
 	}
 
-	editTitle = (e: Event, { target }: SyntheticInputEvent) => {
-		const editedTitle = target.value;
+	editTitle = (e: Object) => {
+		const editedTitle = e.target.value;
 		
 		this.setState({
 			activePost: {
@@ -169,8 +169,8 @@ class App extends Component {
 		})
 	}
 
-	editContent = (e: Event, { target }: SyntheticInputEvent) => {
-		const editedContent = target.value;
+	editContent = (e: Object) => {
+		const editedContent = e.target.value;
 
 		this.setState({
 			activePost: {
