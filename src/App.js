@@ -51,17 +51,17 @@ class App extends Component {
   }
 
 	// create post methods
-	updateTitle = (e) => {
+	updateTitle = (e: Object) => {
 		e.preventDefault();
 		this.setState({tempTitle: e.target.value});
 	}
 	
-	updateContent = (e) => {
+	updateContent = (e: Object) => {
 		e.preventDefault();
 		this.setState({tempContent: e.target.value});
 	}
 
-	publishPost = (e) => {
+	publishPost = (e: Object) => {
 		e.preventDefault();
 		const post = {
 			id: uuidV1(),
@@ -143,20 +143,9 @@ class App extends Component {
 		}
 	}
 
-	publishPostEdit = (e, id, editedPost) => {
+	toggleAdminTabs = (e: Object) => {
 		e.preventDefault();
-		
-		const whichIndex = _.findIndex(this.state.posts, o => o.id === id);
-
-		id && updatePost("http://localhost:4020/posts", id, editedPost);
-
-		id && this.setState({
-			posts: [
-				...this.state.posts.slice(0, whichIndex),
-				editedPost,
-				...this.state.posts.slice(whichIndex + 1)
-			]
-		});
+		this.setState({isCreateRemovePostActive: Number(e.target.getAttribute("data-tab"))});
 	}
 
 	// edit post methods	
@@ -164,11 +153,11 @@ class App extends Component {
 		this.setState({activePost: obj});
 	} 
 
-	cancelEditing = (e) => {
+	cancelEditing = (e: Object) => {
 		this.setState({activePost: {}});
 	}
 
-	editTitle = (e) => {
+	editTitle = (e: Object) => {
 		const editedTitle = e.target.value;
 		
 		this.setState({
@@ -179,7 +168,7 @@ class App extends Component {
 		})
 	}
 
-	editContent = (e) => {
+	editContent = (e: Object) => {
 		const editedContent = e.target.value;
 
 		this.setState({
