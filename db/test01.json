@@ -765,8 +765,8 @@
       "title": "oiuio 5",
       "content": "tytyt",
       "time": 1491130599449,
-      "liked": false,
-      "likes": 0,
+      "liked": true,
+      "likes": 1,
       "commented": true,
       "comments": [
         {

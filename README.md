@@ -2,7 +2,7 @@
 
 ### Startining App (After Installing a Dependency)
 
-`yarn run dev` _or_ `npm run dev`
+`yarn start` _or_ `npm start`
 
 ___ 
 
