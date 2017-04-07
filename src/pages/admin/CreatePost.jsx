@@ -4,7 +4,7 @@ import {renderMarkdown} from '../../lib/helpers';
 export default function CreatePost({posts, tempTitle, tempContent, updateTitle, updateContent, publishPost, isFormDirty}) {
 	return (
 		<div>
-			<div>Create new Post. You can use <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >markdown</a>: *Hello* = {<em>Hello</em>}, `World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} ...</div> <br/>		
+			<div>Create new Post. You can use <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >markdown</a>: *Hello* = {<em>Hello</em>}, `World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} ...</div>
 			<div className="form-group">
 				<input 
 					onChange={updateTitle}
@@ -29,7 +29,7 @@ export default function CreatePost({posts, tempTitle, tempContent, updateTitle, 
 				
 			{isFormDirty && 
 				<div>
-					<div>preview:</div> <br/>
+					<div>preview:</div>
 					<div className="well">	
 						<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(tempTitle)} />
 						<p dangerouslySetInnerHTML={renderMarkdown(tempContent)} />

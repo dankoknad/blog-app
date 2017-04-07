@@ -33,7 +33,7 @@ function EditPost({posts, publishPostEdit, activePost, editTitle, editContent, r
 								</textarea> 
 							</div>
 
-							<div>preview:</div> <br/>
+							<div>preview:</div>
 							<div className="well">	
 								<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(activePost.title)} />
 								<p dangerouslySetInnerHTML={renderMarkdown(activePost.content)} />

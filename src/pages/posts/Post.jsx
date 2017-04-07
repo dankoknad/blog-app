@@ -19,9 +19,6 @@ export default function Post({ post, tempComment, updateTempComment, publishComm
 					<a onClick={(e) => handlePostLike(e, post.id, post)} className={post.liked ? "like active" : "like"} href="#"></a>
 				</div>
 				<div>time: {getDateFromTimestamp(post.time)}</div>
-				<br/>
-				<br/>
-				<br/>
 				<CommentForm
 					post={post}
 					updateTempComment={updateTempComment}

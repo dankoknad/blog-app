@@ -1,8 +1,12 @@
 ## Blogging App
 
-### Startining App (After Installing a Dependency)
+> ### Startining App (After Installing Dependencies)
 
 `yarn start` _or_ `npm start`
+
+> ### Static Types Check (With [Flow](https://flow.org/))
+
+`yarn run flow` _or_ `npm run flow`
 
 ___ 
 
