@@ -286,7 +286,7 @@ class App extends Component {
       <Router>  
         <div className="container">
 					<NavLinks />
-          <div className="jumbotron">
+          <div className="">
             <Route exact path="/" component={Home} />
             <Route exact path="/admin" render={() => (
 							<Admin toggleAdminTabs={this.toggleAdminTabs} activeTab={isCreateRemovePostActive}>

@@ -34,7 +34,7 @@ function EditPost({posts, publishPostEdit, activePost, editTitle, editContent, r
 							</div>
 
 							<div>preview:</div>
-							<div className="well">	
+							<div className="">	
 								<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(activePost.title)} />
 								<p dangerouslySetInnerHTML={renderMarkdown(activePost.content)} />
 							</div>

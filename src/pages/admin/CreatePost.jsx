@@ -30,7 +30,7 @@ export default function CreatePost({posts, tempTitle, tempContent, updateTitle, 
 			{isFormDirty && 
 				<div>
 					<div>preview:</div>
-					<div className="well">	
+					<div className="">	
 						<h2 className="text-center" dangerouslySetInnerHTML={renderMarkdown(tempTitle)} />
 						<p dangerouslySetInnerHTML={renderMarkdown(tempContent)} />
 					</div>

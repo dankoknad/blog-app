@@ -4,7 +4,7 @@ import removeMd from 'remove-markdown';
 
 export default function RemovePost({posts, removePost}) {
 	return (		
-		<div className="well">
+		<div className="">
 			<div className="alert alert-danger">Danger zone! Remove posts<span className="glyphicon glyphicon-remove hide"></span></div>
 			<ul className="list-group">
 				<ReactCSSTransitionGroup
