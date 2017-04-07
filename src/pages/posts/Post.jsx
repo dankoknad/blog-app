@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import CommentForm from './CommentForm';
 import {renderMarkdown, getDateFromTimestamp} from '../../lib/helpers';
 import removeMd from 'remove-markdown';
 
@@ -21,33 +22,15 @@ export default function Post({ post, tempComment, updateTempComment, publishComm
 				<br/>
 				<br/>
 				<br/>
-				<h4>Have something to say? Leave a comment:</h4>
-				<div> You can use <a href="http://jonschlinkert.github.io/remarkable/demo/" target="_blank" >markdown</a>: *Hello* = {<em>Hello</em>}, **World** = {<strong>World</strong>}, `from React` = {<code>from React</code>} ...</div> <br/>
-				
-				<div className="form-group">
-					<textarea
-						onChange={updateTempComment}
-						className="form-control"
-						value={tempComment}
-						placeholder="Content goes here"
-					>
-					</textarea> 
-				</div>
-				<div className="form-group text-right">
-					<button onClick={(e)=> publishComment(e, post.id, post)} className="btn btn-default">Publish Comment</button>
-				</div> 
-				{ (tempComment.length)  
-					?	<div>
-							<div>Preview comment:</div>
-							<div dangerouslySetInnerHTML={renderMarkdown(tempComment)} />
-						</div>
-					: null
-				}
+				<CommentForm
+					post={post}
+					updateTempComment={updateTempComment}
+					tempComment={tempComment}
+					publishComment={publishComment}
+				/>
 			</div>
-
 			{/* Comments component: */}
-			{children}
-			
+			{children}			
 		</div>
 	)
 }

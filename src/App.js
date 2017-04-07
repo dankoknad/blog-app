@@ -290,7 +290,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/admin" render={() => (
 							<Admin toggleAdminTabs={this.toggleAdminTabs} activeTab={isCreateRemovePostActive}>
-								{(isCreateRemovePostActive)
+								{	(isCreateRemovePostActive)
 								?	<CreateRemovePost 
 										tempTitle={tempTitle}
 										tempContent={tempContent}

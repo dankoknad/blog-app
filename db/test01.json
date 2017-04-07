@@ -739,8 +739,17 @@
       "time": 1491130582454,
       "liked": false,
       "likes": 0,
-      "commented": false,
-      "comments": []
+      "commented": true,
+      "comments": [
+        {
+          "commentId": "258070e0-1b69-11e7-8c61-2b6d6b058a2f",
+          "time": 1491552407278,
+          "author": "Captain Anonymous",
+          "content": "hello",
+          "liked": true,
+          "likes": 1
+        }
+      ]
     },
     {
       "id": "071d46c0-1793-11e7-bbd8-37fde5f07ead",
