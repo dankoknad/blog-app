@@ -6,7 +6,7 @@ export default function Comments({post, handleCommentLike}) {
 		(post.comments.length) 
 		?	<div>
 				<p><strong>comments: </strong></p>
-				<ul className="media-list well">
+				<ul className="media-list">
 					{post.comments.map(comment => 
 						<li key={comment.commentId} className="media list-group-item">
 							<div className="media-body">

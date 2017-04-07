@@ -11,7 +11,7 @@ export default function Post({ post, tempComment, updateTempComment, publishComm
 				<li><Link to="/posts">posts</Link></li>
 				<li className="active">{removeMd(post.title)}</li>
 			</ol>
-			<div className="alert alert-warning text-right">post ID: {post.id}</div>
+			<div className="text-right">post ID: {post.id}</div>
 			<div className="post">
 				<h3 dangerouslySetInnerHTML={renderMarkdown(post.title)} className="text-center" />
 				<div dangerouslySetInnerHTML={renderMarkdown(post.content)}/>
