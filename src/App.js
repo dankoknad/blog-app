@@ -67,6 +67,7 @@ class App extends Component {
 		e.preventDefault();
 		const post = {
 			id: uuidV1(),
+			author: "Captain Anonymous",
 			title: this.state.tempTitle,
 			content: this.state.tempContent,
 			time: + getTimeStamp(),

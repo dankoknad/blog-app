@@ -2,6 +2,7 @@
   "posts": [
     {
       "id": "1490286139096",
+      "author": "Captain Anonymous",
       "title": "First Post Title",
       "content": "First Post  **Content** *italic* \n - line 1\n - line 2",
       "time": "1490284179305",
@@ -29,6 +30,7 @@
     },
     {
       "id": "3989d040-1231-11e7-9469-4f9ab775317f1",
+      "author": "Captain Anonymous",
       "title": "abcd",
       "content": "dcba",
       "time": 1490538828612,
@@ -39,6 +41,7 @@
     },
     {
       "id": "3989d040-1231-11e7-9469-4f9b77531yr7f1",
+      "author": "Captain Anonymous",
       "title": "bab",
       "content": "bcb",
       "time": 1490538828612,
@@ -49,6 +52,7 @@
     },
     {
       "id": "0b481c70-1248-11e7-85c7-d1a21050635c",
+      "author": "Captain Anonymous",
       "title": "No more _silly_ titles",
       "content": "qwertgyhujk",
       "time": 1490548629432,
@@ -59,6 +63,7 @@
     },
     {
       "id": "13d91ab0-1248-11e7-85c7-d1a21050635c",
+      "author": "Captain Anonymous",
       "title": "Kakav je bre ovo naslov??",
       "content": "qwertgyhujk - a tek sadrzaj!!",
       "time": 1490548643803,
@@ -78,6 +83,7 @@
     },
     {
       "id": "32f7dee0-1248-11e7-85c7-d1a21050635c",
+      "author": "Captain Anonymous",
       "title": "qwertgyhujk",
       "content": "qwertgyhujk",
       "time": 1490548696014,
@@ -88,6 +94,7 @@
     },
     {
       "id": "6330da90-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "Asdfgh 3",
       "content": "GHJHJH Asdfgh",
       "time": 1490550494905,
@@ -107,6 +114,7 @@
     },
     {
       "id": "66030d60-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "Asdfgh",
       "content": "Asdfgh",
       "time": 1490550499638,
@@ -142,6 +150,7 @@
     },
     {
       "id": "85e5e4e0-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "Asdfgh",
       "content": "Asdfgh",
       "time": 1490550553134,
@@ -152,6 +161,7 @@
     },
     {
       "id": "8bb29300-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "markdown",
       "content": "markdown",
       "time": 1490550562864,
@@ -162,6 +172,7 @@
     },
     {
       "id": "91f7a570-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "markdown",
       "content": "markdown",
       "time": 1490550573383,
@@ -229,6 +240,7 @@
     },
     {
       "id": "959083a0-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "Some markdown",
       "content": "markdown",
       "time": 1490550579418,
@@ -239,6 +251,7 @@
     },
     {
       "id": "ae911e50-124c-11e7-aeda-4f30a0474cdc",
+      "author": "Captain Anonymous",
       "title": "Blah new Post",
       "content": "Blah, Blah, Blah new Post",
       "time": 1490550621365,
@@ -249,6 +262,7 @@
     },
     {
       "id": "193c0c40-12d1-11e7-915d-b97e86f5c24c",
+      "author": "Captain Anonymous",
       "title": "Fenomenalan Clanak",
       "content": "Ovo je najbolji clanak na celom internetu",
       "time": 1490607493892,
@@ -259,6 +273,7 @@
     },
     {
       "id": "69a70db0-12d1-11e7-8b8d-8f3f47a1e067",
+      "author": "Captain Anonymous",
       "title": "Abbb",
       "content": "dfsdfs",
       "time": 1490607628811,
@@ -318,6 +333,7 @@
     },
     {
       "id": "c90985a0-13f1-11e7-8069-11f28ce1e8a9",
+      "author": "Captain Anonymous",
       "title": "99 hjkjh",
       "content": "hjkjh",
       "time": 1490731483898,
@@ -345,6 +361,7 @@
     },
     {
       "id": "90fa08d0-143f-11e7-8d5d-2fa29e8d920d",
+      "author": "Captain Anonymous",
       "title": "Jedan normalan naslov",
       "content": "I ne bas tako normalan sadrzaj",
       "time": 1490764890589,
@@ -364,6 +381,7 @@
     },
     {
       "id": "5a756b60-1485-11e7-860a-9b542e02958e",
+      "author": "Captain Anonymous",
       "title": "*Give* me some better title",
       "content": "_How much better you need?_",
       "time": 1490794863894,
@@ -399,6 +417,7 @@
     },
     {
       "id": "effd3f40-149a-11e7-bfff-0f014b90a13b",
+      "author": "Captain Anonymous",
       "title": "**zdravo** *Ljudi*",
       "content": "- hjkjk\n- iouiuou\n- `Hello`\n- *abc*\n- **def**",
       "time": 1490804134196,
@@ -426,6 +445,7 @@
     },
     {
       "id": "708605b0-14bf-11e7-a646-396f7e7ef558",
+      "author": "Captain Anonymous",
       "title": "_Block_ `me` babe `92` jkkj",
       "content": "opala 67\n\n```\nconst arrow = (num) => num * 2\n```\n`const    arrow = (num) => num * 2`\n\nconst    arrow = (num) => num * 2",
       "time": 1490819811724,
@@ -436,6 +456,7 @@
     },
     {
       "id": "aa5f4ff0-14c7-11e7-b6e6-3b4409784ebe",
+      "author": "Captain Anonymous",
       "title": "Not a number = TL",
       "content": "hjhghj \n```\nhello\n  world\n    from React!\n```",
       "time": 1490823344752,
@@ -487,6 +508,7 @@
     },
     {
       "id": "aee10780-14c7-11e7-b6e6-3b4409784ebe",
+      "author": "Captain Anonymous",
       "title": "oop 666df",
       "content": "_bbnm_",
       "time": 1490823352313,
@@ -570,6 +592,7 @@
     },
     {
       "id": "9083e430-154c-11e7-b21a-77a974064b1c",
+      "author": "Captain Anonymous",
       "title": "0001-4-5--2--",
       "content": "00000001",
       "time": 1490880424436,
@@ -580,6 +603,7 @@
     },
     {
       "id": "a0916370-154c-11e7-b21a-77a974064b1c",
+      "author": "Captain Anonymous",
       "title": "00002",
       "content": "00002",
       "time": 1490880451367,
@@ -631,6 +655,7 @@
     },
     {
       "id": "ab69bee0-16e7-11e7-b3ec-9fca831c586a",
+      "author": "Captain Anonymous",
       "title": "Tyuy",
       "content": "Yyui\n\n- iopip + klfghg\n  - iopip + klfghg\n    - iopip + klfghg\n***\n4. yuiuyiuiy + dfgfdgfdgf jkljlkjl\n1. iopip + klfghg\n1. lkjkl",
       "time": 1491056992718,
@@ -641,6 +666,7 @@
     },
     {
       "id": "b0dcdb50-16e7-11e7-b3ec-9fca831c586a",
+      "author": "Captain Anonymous",
       "title": "11 77787 2112",
       "content": "`gghjhj`",
       "time": 1491057001862,
@@ -724,6 +750,7 @@
     },
     {
       "id": "fa3b3de0-1792-11e7-bbd8-37fde5f07ead",
+      "author": "Captain Anonymous",
       "title": "sdfds",
       "content": "sdfs",
       "time": 1491130568895,
@@ -734,6 +761,7 @@
     },
     {
       "id": "02505560-1793-11e7-bbd8-37fde5f07ead",
+      "author": "Captain Anonymous",
       "title": "hjkhj 22 33",
       "content": "kjhkjh",
       "time": 1491130582454,
@@ -753,6 +781,7 @@
     },
     {
       "id": "071d46c0-1793-11e7-bbd8-37fde5f07ead",
+      "author": "Captain Anonymous",
       "title": "lkjkl 11",
       "content": "lkjk",
       "time": 1491130590508,
@@ -763,6 +792,7 @@
     },
     {
       "id": "0c719090-1793-11e7-bbd8-37fde5f07ead",
+      "author": "Captain Anonymous",
       "title": "oiuio 5",
       "content": "tytyt",
       "time": 1491130599449,
@@ -790,9 +820,21 @@
     },
     {
       "id": "b36e8920-1b0d-11e7-a1b1-9754c01b6ae3",
+      "author": "Captain Anonymous",
       "title": "44 tt oo sasas",
       "content": "4444",
       "time": 1491513131699,
+      "liked": false,
+      "likes": 0,
+      "commented": false,
+      "comments": []
+    },
+    {
+      "id": "485163f0-23f6-11e7-95be-87fdbf0937b1",
+      "author": "Captain Anonymous",
+      "title": "Fresh start",
+      "content": "blah, blah, blah..",
+      "time": 1492492634032,
       "liked": false,
       "likes": 0,
       "commented": false,

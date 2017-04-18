@@ -9,8 +9,7 @@ function EditPost({posts, publishPostEdit, activePost, editTitle, editContent, r
 		<div>
 			<div className="row">
 				<div className="col-md-8">
-					<p>Hello Edit Page</p>
-					{(_.isEmpty(activePost)) && <p>Select a post you would like to edit</p>}
+					{(_.isEmpty(activePost)) && <h2 className="text-center">Select a post you would like to edit</h2>}
 					{(!_.isEmpty(activePost)) && 
 						<div>
 							<div className="form-group">
